@@ -1,0 +1,15 @@
+
+.imagens img {
+     width: 100%;
+     height: 300px;
+
+}
+.conteudo, .texto{
+     padding: 20px;
+}
+
+.conteudo img{
+     width: 100%;
+     height: 300px;
+
+}
