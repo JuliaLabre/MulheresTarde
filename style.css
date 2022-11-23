@@ -1,4 +1,9 @@
-.imagens img {
+
+html {
+     scroll-behavior: smooth;
+   }
+   
+   .imagens img {
      width: 100%;
      height: 300px;
 }
