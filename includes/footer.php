@@ -1,5 +1,3 @@
-<?php
-echo <<<HTML
 
 <div class="container-fluid">
     <div class="row text-center bg-light">
@@ -35,9 +33,9 @@ echo <<<HTML
       <div class="container-fluid">
       <div class="row social">
         <div class="col-md-12 text-center">
-          <a href="https://pt-br.facebook.com/" target="_blank"><img src="..imagens/face.png"></a>
-          <a href="https://www.instagram.com/" target="_blank"><img src="..imagens/insta.webp"></a>
-          <a href="https://www.whatsapp.com/?lang=pt_br" target="_blank"><img src="..imagens/wpp.webp"></a>
+          <a href="https://pt-br.facebook.com/" target="_blank"><img src="imagens/face.png"></a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="imagens/insta.webp"></a>
+          <a href="https://www.whatsapp.com/?lang=pt_br" target="_blank"><img src="imagens/wpp.webp"></a>
         </div>
       </div>
       </div>
@@ -59,4 +57,3 @@ echo <<<HTML
 </body>
 
 </html>
-HTML;

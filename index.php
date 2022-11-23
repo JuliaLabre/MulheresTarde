@@ -1,8 +1,6 @@
 <?php
-require 'header.php'
-
-echo <<<HTML
-<!-- Conteudo -->
+require 'includes/header.php'
+?>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -84,10 +82,10 @@ echo <<<HTML
           contribui para a redução da pressão arterial, diminuindo os riscos de doenças cardíacas</p>
       </div>
     </div>
-
   </div>
-  HTML;
-// Footer
-require 'footer.php'
+
+<?php
+require 'includes/footer.php'
+?>
 
  

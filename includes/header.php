@@ -1,6 +1,3 @@
-<?php
-echo <<<HTML
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,9 +50,9 @@ echo <<<HTML
            Loja
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="roupas.html">Roupas</a>
-            <a class="dropdown-item" href="suplementos.html">Suplementos</a>
-            <a class="dropdown-item" href="diversos.html">Diversos</a>
+            <a class="dropdown-item" href="roupas.php">Roupas</a>
+            <a class="dropdown-item" href="suplementos.php">Suplementos</a>
+            <a class="dropdown-item" href="diversos.php">Diversos</a>
 
           </div>
         </li>
@@ -66,4 +63,3 @@ echo <<<HTML
       </form>
     </div>
   </nav>
-  HTML;
