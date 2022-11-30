@@ -12,13 +12,16 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="icon" href="/imagens/favicon.png">
+
   <title>High Fit</title>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Academia</a>
+    <a class="navbar-brand" href="index.php"><i class="fa-solid fa-dumbbell"></i> High Fit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
       aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -27,10 +30,10 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
+          <a class="nav-link" href="index.php">Página Inicial<span class="sr-only">(página atual)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nossa Academia</a>
+          <a class="nav-link" href="sobre.php">Nossa Academia</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -38,9 +41,9 @@
             Atividades
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#Spinn">Spinning</a>
-            <a class="dropdown-item" href="#Jumpp">Jumpp</a>
-            <a class="dropdown-item" href="#Hidro">Hidroginástica</a>
+            <a class="dropdown-item" href="index.php#Spinn">Spinning</a>
+            <a class="dropdown-item" href="index.php#Jump">Jump</a>
+            <a class="dropdown-item" href="index.php#Hidro">Hidroginástica</a>
 
           </div>
         </li>

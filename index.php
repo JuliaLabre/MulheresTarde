@@ -1,6 +1,7 @@
 <?php
 require 'includes/header.php'
 ?>
+</div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -37,11 +38,11 @@ require 'includes/header.php'
 
   <div class="container-fluid text-center conteudo">
     <div class="row">
-      <div class="col-md-6 col-sm" id="Jumpp">
-        <img src="imagens/jumpp.jpg" class="img-fluid">
+      <div class="col-md-6 col-sm" id="Jump">
+        <img src="imagens/Jump.jpg" class="img-fluid">
       </div>
       <div class="col-md-6 col-sm">
-        <h3>Jumpp</h3>
+        <h3>Jump</h3>
         <p>Muitas pessoas procuram o Jump para fortalecer as pernas e os glúteos, mas, mais do que essas regiões, ele
           trabalha muito bem a região do abdômen, e muitos dos exercícios são localizados para cuidar também dos
           músculos das costas e dos braços.</p>
