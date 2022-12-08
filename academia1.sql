@@ -12,7 +12,7 @@ cidade VARCHAR(40) NOT NULL,
 UF CHAR(2) NOT NULL);
 
 CREATE TABLE aluno (
-matricula INTEGER PRIMARY KEY,
+matricula INTEGER PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(60) NOT NULL,
 telefone VARCHAR(15) NOT NULL,
 CPF CHAR(14) NOT NULL,
@@ -86,4 +86,55 @@ CREATE TABLE aulasaluno(
         quantidade INTEGER NOT NULL,
         FOREIGN KEY (CPFfuncionario) REFERENCES funcionario(CPFfuncionario),
         FOREIGN KEY (codigoproduto) REFERENCES produto (codigoproduto)
-    )
+    );
+    INSERT INTO endereco(
+        CEP,
+        rua,
+        bairro,
+        cidade,
+        UF
+    )VALUES(
+        '23085-610',
+        'Rua Pauwels',
+        'Campo Grande',
+        'Rio de Janeiro',
+        'RJ'
+    ),
+    (
+        '26551-090',
+        'Travessa Elpidio',
+        'Cruzeiro do Sul',
+        'Mesquita',
+        'RJ'
+    );
+    INSERT INTO aluno(
+        nome,
+        telefone,
+        CPF,
+        RG,
+        datanascimento,
+        CEP,
+        numerocasa,
+        complemento,
+        foto
+        )VALUES(
+            'Joca da Silva',
+            '(21)99999-9999',
+            '133.333.333-33',
+            '23.815.589-55',
+            '1997/10/20',
+            '23085-610',
+            '55',
+            'fundos',
+            'https://randomuser.me/api/portraits/men/14.jpg'
+        ),(
+            'Linka Dinn',
+            '(21)99999-9997',
+            '133.333.333-32',
+            '23.815.589-54',
+            '1998/09/15',
+            '26551-090',
+            '55',
+            'fundos',
+            'https://randomuser.me/api/portraits/women/72.jpg'
+        )
