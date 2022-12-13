@@ -275,48 +275,4 @@ CREATE TABLE aulasaluno(
                 '2' 
             );
 
-    -- Seleciona tudo da tabela aluno
-        SELECT * FROM aluno;
-
-    --Seleciona as colunas nome e telefone da tabela aluno
-        SELECT nome,telefone FROM aluno;
-
-        -- Todas as palavras que tiverem essa combinação descrita no LIKE ele vai puxar:
-        SELECT nome,telefone FROM aluno WHERE complemento LIKE '%ap%';
-
-        -- Pesquisa nome e preço de todos os produtos com estoque maior ou igual a 30:
-        SELECT nome,valor FROM produto WHERE quantidade >= 30; 
-
-        -- Pesquisar qual a soma do valor dos produtos em estoque
-        SELECT SUM(valor) FROM produto;
-
-        --Verifica qual o valor total de mercadoria em estoque
-        SELECT SUM(quantidade*valor) FROM produto;
-
-        -- Nomeando pesquisas / colunas
-        SELECT SUM(quantidade*valor) as 'Total do estoque' FROM produto;
-
-        --Pesquisar as informações das aulas executadas entre os dias - 6/12/2022 a 10/12/2022 
-
-    --FORMA 1
-    SELECT * FROM aula WHERE dataaula >= '2022-12-06' AND dataaula <= '2022-12-10';
-
-    -- FORMA 2
-    SELECT * FROM aula WHERE dataaula BETWEEN '2022-12-06' AND '2022-12-10';
-
-    --Pesquisar as informações das aulas executadas nos dias 6/12/22 e 10/12/22
-    SELECT * FROM aula WHERE dataaula IN ('2022-12-06','2022-12-10');
-
-    -- formas negativas das pesquisas
-    SELECT * FROM aula WHERE dataaula NOT BETWEEN '2022-12-06' AND '2022-12-10';
-    SELECT * FROM aula WHERE dataaula NOT IN ('2022-12-06','2022-12-10');
-
-    -- Pesquisar os nomes, telefones, CPF de todos os Funcionários que o nome começa com Maria.
-    SELECT nome,telefone,CPFfuncionario FROM funcionario WHERE nome LIKE 'Maria%';
-
-    -- Alterar a tabela de alunos para inserir o sobrenome nos alunos de matricula 1 e 2
-    UPDATE aluno SET nome = 'Joca da Silva Sauro' WHERE matricula = 1;
-    UPDATE aluno SET nome = 'Joana da Silva Sauro' WHERE matricula = 2;
-
-    --Pesquisar o nome e telefone dos alunos que o ultimo sobrenome é Sauro
-    SELECT nome,telefone FROM aluno WHERE nome LIKE '%Sauro';
+   
