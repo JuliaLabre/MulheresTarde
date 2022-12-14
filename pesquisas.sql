@@ -37,6 +37,9 @@
     -- Pesquisar os nomes, telefones, CPF de todos os Funcionários que o nome começa com Maria.
     SELECT nome,telefone,CPFfuncionario FROM funcionario WHERE nome LIKE 'Maria%';
 
+    -- Pesquisar os nomes, telefones, CPF de todos os Funcionários que o nome começa com Maria ou que tem sobrenome Silva;
+    SELECT nome,telefone,CPFfuncionario FROM funcionario WHERE nome LIKE 'Maria%' OR '%Couves';
+
     -- Alterar a tabela de alunos para inserir o sobrenome nos alunos de matricula 1 e 2
     UPDATE aluno SET nome = 'Joca da Silva Sauro' WHERE matricula = 1;
     UPDATE aluno SET nome = 'Joana da Silva Sauro' WHERE matricula = 2;
@@ -76,21 +79,39 @@ SELECT f.nome, v.valorvenda
  FROM funcionario f INNER JOIN venda v ON f.CPFfuncionario = v.CPFfuncionario AND v.data BETWEEN '2022-12-01' AND '2022-12-31';
 
 -- Pesquisa os nome da atividade, nome dos alunos, data da aula e horario do mes de dezembro:
--- ta errado, refazer
- SELECT ativ.nomeatividade, a.dataaula, a.horario, aluno.nome
-    FROM atividade ativ INNER JOIN aula a ON a.idatividade = ativ.idatividade
-   INNER JOIN aluno ON a.matricula = aulasaluno.matricula
-    INNER JOIN aulasaluno ON aula.idaula = aulasaluno.idaula
-    AND a.dataaula BETWEEN '2022-12-01' AND '2022-12-31';
+SELECT ati.nomeatividade, a.dataaula, a.horario, alu.nome
+FROM atividade ati  INNER JOIN aula a ON ati.idatividade = a.idatividade
+INNER JOIN aulasaluno aa ON a.idaula = aa.idaula 
+INNER JOIN aluno alu ON alu.matricula = aa.matricula
+AND a.dataaula BETWEEN '2022-12-01' AND '2022-12-31';
 
 --teste Julia
  -- Pesquisa nome do aluno, nome da atividade, nome do professor, data e horario da aulas realizadas:
+  -- acho que não ta dando muito certo, está puxando uma aula só
  SELECT a.nome, ativ.nomeatividade, f.nome, aula.dataaula, aula.horario 
  FROM aluno a INNER JOIN aulasaluno ON a.matricula = aulasaluno.matricula
  INNER JOIN aula ON aula.idaula = aulasaluno.idaula
  INNER JOIN atividade ativ ON ativ.idatividade = aula.idatividade
  INNER JOIN professor p ON p.idprofessor = aula.idprofessor
  INNER JOIN funcionario f ON f.CPFfuncionario = p.CPFfuncionario;
+--fim teste
 
- -- não ta dando muito certo, está puxando uma aula só
     
+ -- Pesquisar nome e telefone de todos os professores que tiveram aula no dia 10/12/22:
+ SELECT f.nome, f.telefone FROM professor p 
+ INNER JOIN funcionario f ON f.CPFfuncionario = p.CPFfuncionario
+ INNER JOIN aula ON p.idprofessor = aula.idprofessor
+ AND aula.dataaula = '2022-12-10'; -- pode ser IN ao invés de = tbm
+
+ --Pesquisar nome e telefone de todos os professores que podem dar aulas de spinning:
+SELECT f.nome, f.telefone FROM funcionario f 
+INNER JOIN professor p ON f.CPFfuncionario = p.CPFfuncionario
+INNER JOIN habilitaprofessor hp ON p.idprofessor = hp.idprofessor
+INNER JOIN atividade ON atividade.idatividade = hp.idatividade
+AND atividade.nomeatividade = 'Spinning';
+
+ -- mostrar o total de vendas do dia 05/12/2022:
+ SELECT SUM(valorvenda) FROM venda;
+
+ -- Insere Colunas na tabela:
+ ALTER TABLE aluno ADD sexo CHAR(1) NOT NULL;

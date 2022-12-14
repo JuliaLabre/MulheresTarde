@@ -22,6 +22,7 @@ CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
 foto VARCHAR(255),
+sexo CHAR(1) NOT NULL,
 FOREIGN KEY(CEP) REFERENCES endereco(CEP));
 
 CREATE TABLE funcionario (
@@ -33,6 +34,7 @@ CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
 foto VARCHAR(255),
+sexo CHAR(1) NOT NULL,
 FOREIGN KEY(CEP) REFERENCES endereco(CEP));
 
 CREATE TABLE professor(
@@ -116,7 +118,8 @@ CREATE TABLE aulasaluno(
         CEP,
         numerocasa,
         complemento,
-        foto
+        foto,
+        sexo
         )VALUES(
             'Joca da Silva',
             '(21)99999-9999',
@@ -126,7 +129,8 @@ CREATE TABLE aulasaluno(
             '23085-610',
             '55',
             'fundos',
-            'https://randomuser.me/api/portraits/men/14.jpg'
+            'https://randomuser.me/api/portraits/men/14.jpg',
+            'M'
         ),(
             'Linka Dinn',
             '(21)99999-9997',
@@ -136,7 +140,8 @@ CREATE TABLE aulasaluno(
             '26551-090',
             '55',
             'fundos',
-            'https://randomuser.me/api/portraits/women/72.jpg'
+            'https://randomuser.me/api/portraits/women/72.jpg',
+            'F'
         );
         INSERT INTO funcionario(
             CPFfuncionario,
@@ -146,7 +151,8 @@ CREATE TABLE aulasaluno(
             CEP,
             numerocasa,
             complemento,
-            foto
+            foto,
+            sexo
          ) VALUES (
             '123.456.789.10',
             'Zé das Couves',
@@ -155,7 +161,8 @@ CREATE TABLE aulasaluno(
             '26551-090',
             '1',
             'Quadra 15',
-            'https://randomuser.me/api/portraits/men/1.jpg'
+            'https://randomuser.me/api/portraits/men/1.jpg',
+            'M'
             ),(
             '123.456.789.00',
             'Maria das Dores',
@@ -164,7 +171,8 @@ CREATE TABLE aulasaluno(
             '23085-610',
             '2',
             'Ap101',
-            'https://randomuser.me/api/portraits/women/1.jpg'
+            'https://randomuser.me/api/portraits/women/1.jpg',
+            'F'
             ),(
             '123.456.789.50',
             'Maria dos Amores',
@@ -173,7 +181,8 @@ CREATE TABLE aulasaluno(
             '23085-610',
             '2',
             'Ap105',
-            'https://randomuser.me/api/portraits/women/16.jpg'
+            'https://randomuser.me/api/portraits/women/16.jpg',
+            'F'
             );
             INSERT INTO professor (
                 disponibilidade,
@@ -274,5 +283,6 @@ CREATE TABLE aulasaluno(
                 '1',
                 '2' 
             );
+
 
    
