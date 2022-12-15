@@ -41,9 +41,10 @@
             Atividades
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="index.php#Spinn">Spinning</a>
-            <a class="dropdown-item" href="index.php#Jump">Jump</a>
-            <a class="dropdown-item" href="index.php#Hidro">Hidroginástica</a>
+            <a class="dropdown-item" href="spinn.php">Spinning</a>
+            <a class="dropdown-item" href="jump.php">Jump</a>
+            <a class="dropdown-item" href="hidro.php">Hidroginástica</a>
+            <a class="dropdown-item" href="pilates.php">Pilates</a>
 
           </div>
         </li>
@@ -60,9 +61,14 @@
           </div>
         </li>
       </ul>
+      <!-- botâo de pesquisar comentado, pois achei desnecessário no momento
+        
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-      </form>
+      </form> -->
+
+      <!-- Area do cliente  -->
+      <a class="navbar-brand" href="login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i></i> Login</a>
     </div>
   </nav>

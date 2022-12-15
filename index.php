@@ -39,7 +39,7 @@ require 'includes/header.php'
   <div class="container-fluid text-center conteudo">
     <div class="row">
       <div class="col-md-6 col-sm" id="Jump">
-        <img src="imagens/Jump.jpg" class="img-fluid">
+        <a href="jump.php"><img src="imagens/Jump.jpg" class="img-fluid"></a>
       </div>
       <div class="col-md-6 col-sm">
         <h3>Jump</h3>
@@ -65,7 +65,7 @@ require 'includes/header.php'
           gestantes ou, simplesmente, para quem derrete de calor só de pensar em exercícios físicos no verão. </p>
       </div>
       <div class="col-md-6 col-sm">
-        <img src="imagens/hidro.jpg" class="img-fluid">
+        <a href="hidro.php"><img src="imagens/hidro.jpg" class="img-fluid"></a>
 
       </div>
     </div>
@@ -74,7 +74,7 @@ require 'includes/header.php'
   <div class="container-fluid text-center conteudo">
     <div class="row">
       <div class="col-md-6 col-sm" id="Spinn">
-        <img src="imagens/spinning.jpg" class="img-fluid">
+        <a href="spinn.php"><img src="imagens/spinning.jpg" class="img-fluid"></a>
       </div>
       <div class="col-md-6 col-sm">
         <h3>Spinning</h3>

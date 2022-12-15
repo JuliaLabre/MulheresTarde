@@ -3,6 +3,7 @@
 require 'includes/header.php'
 ?>
 <!-- Conteudo -->
+<div class="wrap">
 <h2 class='text-center'>Roupas</h2>
 
 <div class="row">
@@ -115,6 +116,7 @@ require 'includes/header.php'
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 <!-- Footer -->

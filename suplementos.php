@@ -4,6 +4,7 @@ require 'includes/header.php'
 ?>
 
 <!-- Conteudo -->
+<div class="wrap">
 <h2 class='text-center'>Suplementos</h2>
  <div class="row">
     <div class="col-md-3">
@@ -154,6 +155,7 @@ require 'includes/header.php'
       
       
     </div>
+  </div>
   </div>
 <!-- Footer -->
 <?php
