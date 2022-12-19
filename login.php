@@ -29,8 +29,8 @@ require 'includes/header.php'
 <div class="col-md-4"></div>
 </div>
 </div>
+<div class="text-center"> Ainda não é um aluno ? <a href="aluno.php">Cadastre-se aqui</a></div>
 </div>
-
 <!-- Footer -->
 <?php
 require 'includes/footer.php'
