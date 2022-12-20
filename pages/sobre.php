@@ -1,6 +1,6 @@
 <!-- Cabeçalho -->
 <?php
-require 'includes/header.php'
+require '../includes/header.php'
 ?>
 
 <!-- Conteudo -->
@@ -21,13 +21,13 @@ require 'includes/header.php'
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="imagens/academia3.jpg" alt="First slide">
+      <img class="d-block w-100" src="../imagens/academia3.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagens/academia2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="../imagens/academia2.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagens/academia1.jpg" alt="Third slide">
+      <img class="d-block w-100" src="../imagens/academia1.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -113,5 +113,5 @@ o que contribui para a redução da pressão arterial, diminuindo os riscos de d
  
 <!-- Footer -->
 <?php
-require 'includes/footer.php'
+require '../includes/footer.php'
 ?>

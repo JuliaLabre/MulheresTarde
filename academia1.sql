@@ -15,26 +15,29 @@ CREATE TABLE aluno (
 matricula INTEGER PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(60) NOT NULL,
 telefone VARCHAR(15) NOT NULL,
+emailaluno VARCHAR(40) NOT NULL,
 CPF CHAR(14) NOT NULL,
 RG VARCHAR(15) NOT NULL,
+sexo CHAR(1) NOT NULL,
 datanascimento DATE NOT NULL,
 CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
 foto VARCHAR(255),
-sexo CHAR(1) NOT NULL,
 FOREIGN KEY(CEP) REFERENCES endereco(CEP));
 
 CREATE TABLE funcionario (
 CPFfuncionario CHAR (14) PRIMARY KEY,
 nome VARCHAR(60) NOT NULL,
 telefone VARCHAR(15) NOT NULL,
+emailafunc VARCHAR(40) NOT NULL,
 RG CHAR(15) NOT NULL,
+sexo CHAR(1) NOT NULL,
 CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
 foto VARCHAR(255),
-sexo CHAR(1) NOT NULL,
+cargo VARCHAR(40) NOT NULL,
 FOREIGN KEY(CEP) REFERENCES endereco(CEP));
 
 CREATE TABLE professor(
@@ -119,7 +122,8 @@ CREATE TABLE aulasaluno(
         numerocasa,
         complemento,
         foto,
-        sexo
+        sexo,
+        emailaluno
         )VALUES(
             'Joca da Silva',
             '(21)99999-9999',
@@ -130,7 +134,8 @@ CREATE TABLE aulasaluno(
             '55',
             'fundos',
             'https://randomuser.me/api/portraits/men/14.jpg',
-            'M'
+            'M',
+            'joca@silva.com'
         ),(
             'Linka Dinn',
             '(21)99999-9997',
@@ -141,7 +146,8 @@ CREATE TABLE aulasaluno(
             '55',
             'fundos',
             'https://randomuser.me/api/portraits/women/72.jpg',
-            'F'
+            'F',
+            'linka@dinn.com'
         );
         INSERT INTO funcionario(
             CPFfuncionario,
@@ -152,7 +158,9 @@ CREATE TABLE aulasaluno(
             numerocasa,
             complemento,
             foto,
-            sexo
+            sexo,
+            emailafunc,
+            cargo
          ) VALUES (
             '123.456.789.10',
             'Zé das Couves',
@@ -162,7 +170,9 @@ CREATE TABLE aulasaluno(
             '1',
             'Quadra 15',
             'https://randomuser.me/api/portraits/men/1.jpg',
-            'M'
+            'M',
+            'ze@couves.com',
+            'Professor'
             ),(
             '123.456.789.00',
             'Maria das Dores',
@@ -172,7 +182,9 @@ CREATE TABLE aulasaluno(
             '2',
             'Ap101',
             'https://randomuser.me/api/portraits/women/1.jpg',
-            'F'
+            'F',
+            'maria@dores.com',
+            'Professor'
             ),(
             '123.456.789.50',
             'Maria dos Amores',
@@ -182,7 +194,9 @@ CREATE TABLE aulasaluno(
             '2',
             'Ap105',
             'https://randomuser.me/api/portraits/women/16.jpg',
-            'F'
+            'F',
+            'maria@amores.com',
+            'Recepcionista'
             );
             INSERT INTO professor (
                 disponibilidade,

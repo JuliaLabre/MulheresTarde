@@ -1,11 +1,11 @@
 <!-- Cabeçalho -->
 <?php
-require 'includes/header.php'
+require '../includes/header.php'
 ?>
 
 <!-- Conteudo -->
 <div class="wrap">
-<h2 class='text-center'>Administrativo</h2>
+<h2 class='text-center'>Faça Login</h2>
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col-md-4"></div>
@@ -21,7 +21,7 @@ require 'includes/header.php'
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+    <label class="form-check-label" for="exampleCheck1">Mantenha-me conectado</label>
   </div>
   <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
@@ -29,9 +29,9 @@ require 'includes/header.php'
 <div class="col-md-4"></div>
 </div>
 </div>
+<div class="text-center"> Ainda não é um aluno ? <a href="aluno.php">Cadastre-se aqui</a></div>
 </div>
-
 <!-- Footer -->
 <?php
-require 'includes/footer.php'
+require '../includes/footer.php'
 ?>

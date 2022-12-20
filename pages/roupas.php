@@ -1,6 +1,6 @@
 <!-- Cabeçalho -->
 <?php
-require 'includes/header.php'
+require '../includes/header.php'
 ?>
 <!-- Conteudo -->
 <div class="wrap">
@@ -9,7 +9,7 @@ require 'includes/header.php'
 <div class="row">
     <div class="col-md-3">
       <div class="card bg-light mb-3">
-        <img class="card-img-top" src="imagens/roupa1.webp" alt="Imagem de capa do card">
+        <img class="card-img-top" src="../imagens/roupa1.webp" alt="Imagem de capa do card">
         <div class="card-body">
           <h5 class="card-title">Top Branco</h5>
           <p class="card-text">Confortável e lindo.</p>
@@ -29,7 +29,7 @@ require 'includes/header.php'
         </button>
       </div>
       <div class="modal-body">
-      <img class="img-fluid" src="imagens/roupa1.webp" alt="Imagem de capa do card">
+      <img class="img-fluid" src="../imagens/roupa1.webp" alt="Imagem de capa do card">
       Top Branco - R$20,00 
       </div>
       <div class="modal-footer">
@@ -45,7 +45,7 @@ require 'includes/header.php'
 
       <div class="col-md-3">
         <div class="card bg-light mb-3">
-          <img class="card-img-top" src="imagens/roupa2.webp" alt="Imagem de capa do card">
+          <img class="card-img-top" src="../imagens/roupa2.webp" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">Top Vermelho</h5>
             <p class="card-text">Lindo e estiloso.</p>
@@ -65,7 +65,7 @@ require 'includes/header.php'
         </button>
       </div>
       <div class="modal-body">
-      <img class="img-fluid" src="imagens/roupa2.webp" alt="Imagem de capa do card">
+      <img class="img-fluid" src="../imagens/roupa2.webp" alt="Imagem de capa do card">
       Top Vermelho - R$ 25,00
       </div>
       <div class="modal-footer">
@@ -82,7 +82,7 @@ require 'includes/header.php'
 
       <div class="col-md-3">
         <div class="card bg-light mb-3">
-          <img class="card-img-top" src="imagens/roupa4.webp" alt="Imagem de capa do card">
+          <img class="card-img-top" src="../imagens/roupa4.webp" alt="Imagem de capa do card">
           <div class="card-body">
             <h5 class="card-title">Top Cinza e verde</h5>
             <p class="card-text">O short não está a venda</p>
@@ -102,7 +102,7 @@ require 'includes/header.php'
         </button>
       </div>
       <div class="modal-body">
-      <img class="img-fluid" src="imagens/roupa4.webp" alt="Imagem de capa do card">
+      <img class="img-fluid" src="../imagens/roupa4.webp" alt="Imagem de capa do card">
       Top Cinza e verde - R$ 20,00
       </div>
       <div class="modal-footer">
@@ -121,5 +121,5 @@ require 'includes/header.php'
 
 <!-- Footer -->
 <?php
-require 'includes/footer.php'
+require '../includes/footer.php'
 ?>

@@ -3,26 +3,32 @@
     <div class="row text-center bg-light">
       <div class="col-md-3">
         <h4>Institucional</h4>
-        <p><a class="navbar-link" href="index.php">Página Inicial</a></p>
-        <p><a class="navbar-link" href="sobre.php">Nossa Academia</a></p>
-        <p><a class="navbar-link" href="planos.php">Conheça os Planos</a></p>
-        <p><a class="navbar-link" href="login.php">Área do Cliente</a></p>
-        <p><a class="navbar-link" href="admin.php">Administrativo</a></p>
+        <ul class="navbar-nav">
+        <li><a class="navbar-link" href="index.php">Página Inicial</a></li>
+        <li><a class="navbar-link" href="sobre.php">Nossa Academia</a></li>
+        <li><a class="navbar-link" href="planos.php">Conheça os Planos</a></li>
+        <li><a class="navbar-link" href="login.php">Área do Cliente</a></li>
+        <li><a class="navbar-link" href="admin.php">Administrativo</a></li>
 
       </div>
       <div class="col-md-3">
         <h4>Atividades</h4>
         <ul class="navbar-nav">
-        <p><a class="navbar-link" href="spinn.php">Spinning</a></p>
-        <p><a class="navbar-link" href="jump.php">Jump</a></p>
-        <p><a class="navbar-link" href="hidro.php">Hidroginástica</a></p>
-        <p><a class="navbar-link" href="pilates.php">Pilates</a></p>
+        <li><a class="navbar-link" href="spinn.php">Spinning</a></li>
+        <li><a class="navbar-link" href="jump.php">Jump</a></li>
+        <li><a class="navbar-link" href="hidro.php">Hidroginástica</a></li>
+        <li><a class="navbar-link" href="pilates.php">Pilates</a></li>
+        </ul>
       </div>
 
       <div class="col-md-3">
         <h4>Funcionamento</h4>
-        <p>Segunda à Sábado - 06:00 às 23:00</p>
-        <p>Domingo - 07:00 às 13:00</p>
+        <ul class="navbar-nav">
+        <li>Segunda à Sábado - 06:00 às 23:00</li>
+        <li>Domingo - 07:00 às 13:00</li>
+        </ul>
+        <br>
+        <a href="funcionario.php"><i class="fa-solid fa-briefcase"></i> Trabalhe Conosco</a>
       </div>
 
       <div class="col-md-3 mapa">
@@ -33,16 +39,16 @@
       <div class="container-fluid">
       <div class="row social">
         <div class="col-md-12 text-center">
-          <a href="https://pt-br.facebook.com/" target="_blank"><img src="imagens/face.png"></a>
-          <a href="https://www.instagram.com/" target="_blank"><img src="imagens/insta.webp"></a>
-          <a href="https://www.whatsapp.com/?lang=pt_br" target="_blank"><img src="imagens/wpp.webp"></a>
+          <a href="https://pt-br.facebook.com/" target="_blank"><img src="../imagens/face.png"></a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="../imagens/insta.webp"></a>
+          <a href="https://www.whatsapp.com/?lang=pt_br" target="_blank"><img src="../imagens/wpp.webp"></a>
         </div>
       </div>
       </div>
 
     </div>
   </div>
-<script src="script.js"></script>
+<script src="../script.js"></script>
   <!-- JavaScript (Opcional) -->
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
