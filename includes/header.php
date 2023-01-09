@@ -54,8 +54,8 @@
            Loja
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="roupas.php">Roupas</a>
-            <a class="dropdown-item" href="suplementos.php">Suplementos</a>
+            <a class="dropdown-item" href="../pages/roupas.php">Roupas</a>
+            <a class="dropdown-item" href="../pages/suplementos.php">Suplementos</a>
             <a class="dropdown-item" href="../pages/diversos.php">Diversos</a>
 
           </div>

@@ -4,20 +4,20 @@
       <div class="col-md-3">
         <h4>Institucional</h4>
         <ul class="navbar-nav">
-        <li><a class="navbar-link" href="index.php">Página Inicial</a></li>
-        <li><a class="navbar-link" href="sobre.php">Nossa Academia</a></li>
-        <li><a class="navbar-link" href="planos.php">Conheça os Planos</a></li>
-        <li><a class="navbar-link" href="login.php">Área do Cliente</a></li>
-        <li><a class="navbar-link" href="admin.php">Administrativo</a></li>
+        <li><a class="navbar-link" href="/">Página Inicial</a></li>
+        <li><a class="navbar-link" href="../pages/sobre.php">Nossa Academia</a></li>
+        <li><a class="navbar-link" href="../pages/planos.php">Conheça os Planos</a></li>
+        <li><a class="navbar-link" href="../pages/login.php">Área do Cliente</a></li>
+        <li><a class="navbar-link" href="../pages/admin.php">Administrativo</a></li>
 
       </div>
       <div class="col-md-3">
         <h4>Atividades</h4>
         <ul class="navbar-nav">
-        <li><a class="navbar-link" href="spinn.php">Spinning</a></li>
-        <li><a class="navbar-link" href="jump.php">Jump</a></li>
-        <li><a class="navbar-link" href="hidro.php">Hidroginástica</a></li>
-        <li><a class="navbar-link" href="pilates.php">Pilates</a></li>
+        <li><a class="navbar-link" href="../pages/spinn.php">Spinning</a></li>
+        <li><a class="navbar-link" href="../pages/jump.php">Jump</a></li>
+        <li><a class="navbar-link" href="../pages/hidro.php">Hidroginástica</a></li>
+        <li><a class="navbar-link" href="../pages/pilates.php">Pilates</a></li>
         </ul>
       </div>
 
