@@ -1,3 +1,7 @@
+.rodape{
+     padding: 20px;
+}
+
 html {
      scroll-behavior: smooth;
    }
@@ -5,6 +9,7 @@ html {
    .imagens img {
      width: 100%;
      height: 300px;
+     border-radius: 20%;
 }
 
 .conteudo {
@@ -51,7 +56,7 @@ html {
    }
 
    .card1:hover .list-group-item{
-     background:#00ffb6 !important
+     background:#00ffb6 !important;
    }
 
 
@@ -64,7 +69,7 @@ html {
    }
 
    .card2:hover .list-group-item{
-     background:#00C9FF !important
+     background:#00C9FF !important;
    }
 
 
@@ -74,7 +79,7 @@ html {
    }
 
    .card3:hover .list-group-item{
-     background:#ff95e9 !important
+     background:#ff95e9 !important;
    }
 
 
@@ -82,3 +87,5 @@ html {
      color:white;
      background:#212529;
    }
+
+  

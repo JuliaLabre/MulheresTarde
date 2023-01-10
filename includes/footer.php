@@ -1,13 +1,12 @@
-
 <div class="container-fluid">
-    <div class="row text-center bg-light">
+    <div class="row text-center bg-light rodape">
       <div class="col-md-3">
         <h4>Institucional</h4>
         <ul class="navbar-nav">
         <li><a class="navbar-link" href="/">Página Inicial</a></li>
         <li><a class="navbar-link" href="../pages/sobre.php">Nossa Academia</a></li>
         <li><a class="navbar-link" href="../pages/planos.php">Conheça os Planos</a></li>
-        <li><a class="navbar-link" href="../pages/login.php">Área do Cliente</a></li>
+        <li><a class="navbar-link" href="../pages/login.php">Área do Aluno</a></li>
         <li><a class="navbar-link" href="../pages/admin.php">Administrativo</a></li>
 
       </div>

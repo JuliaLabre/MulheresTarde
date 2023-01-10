@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS academia1;
+DROP DATABASE IF EXISTS academia;
 
-CREATE DATABASE academia1 CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE academia CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE academia1;
+USE academia;
 
 CREATE TABLE endereco (
 CEP CHAR(9) PRIMARY KEY,
@@ -18,6 +18,7 @@ telefone VARCHAR(15) NOT NULL,
 emailaluno VARCHAR(40) NOT NULL,
 CPF CHAR(14) NOT NULL,
 RG VARCHAR(15) NOT NULL,
+senha VARCHAR(255) NOT NULL,
 sexo CHAR(1) NOT NULL,
 datanascimento DATE NOT NULL,
 CEP CHAR(9) NOT NULL,
@@ -32,6 +33,7 @@ nome VARCHAR(60) NOT NULL,
 telefone VARCHAR(15) NOT NULL,
 emailafunc VARCHAR(40) NOT NULL,
 RG CHAR(15) NOT NULL,
+senha VARCHAR(255) NOT NULL,
 sexo CHAR(1) NOT NULL,
 CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
@@ -117,6 +119,7 @@ CREATE TABLE aulasaluno(
         telefone,
         CPF,
         RG,
+        senha,
         datanascimento,
         CEP,
         numerocasa,
@@ -129,6 +132,7 @@ CREATE TABLE aulasaluno(
             '(21)99999-9999',
             '133.333.333-33',
             '23.815.589-55',
+            SHA1('Senha123'),
             '1997/10/20',
             '23085-610',
             '55',
@@ -141,6 +145,7 @@ CREATE TABLE aulasaluno(
             '(21)99999-9997',
             '133.333.333-32',
             '23.815.589-54',
+            SHA1('Senha123'),
             '1998/09/15',
             '26551-090',
             '55',
@@ -154,6 +159,7 @@ CREATE TABLE aulasaluno(
             nome,
             telefone,
             RG,
+            senha,
             CEP,
             numerocasa,
             complemento,
@@ -166,6 +172,7 @@ CREATE TABLE aulasaluno(
             'Zé das Couves',
             '(21)99999-9920',
             '12.345.678-99',
+            SHA1('Senha123'),
             '26551-090',
             '1',
             'Quadra 15',
@@ -178,6 +185,7 @@ CREATE TABLE aulasaluno(
             'Maria das Dores',
             '(21)99999-9950',
             '12.345.678-90',
+            SHA1('Senha123'),
             '23085-610',
             '2',
             'Ap101',
@@ -190,6 +198,7 @@ CREATE TABLE aulasaluno(
             'Maria dos Amores',
             '(21)99999-9988',
             '12.345.678-00',
+            SHA1('Senha123'),
             '23085-610',
             '2',
             'Ap105',

@@ -20,7 +20,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00ffb6;">
     <a class="navbar-brand" href="../index.php"><i class="fa-solid fa-dumbbell"></i> High Fit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
       aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -32,10 +32,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="../index.php">Página Inicial<span class="sr-only">(página atual)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="../pages/sobre.php">Nossa Academia</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Atividades
@@ -48,7 +48,7 @@
 
           </div>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
            Loja
@@ -57,8 +57,10 @@
             <a class="dropdown-item" href="../pages/roupas.php">Roupas</a>
             <a class="dropdown-item" href="../pages/suplementos.php">Suplementos</a>
             <a class="dropdown-item" href="../pages/diversos.php">Diversos</a>
-
           </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../pages/planos.php">Conheça nossos Planos</a>
         </li>
       </ul>
       <!-- botâo de pesquisar comentado, pois achei desnecessário no momento
@@ -69,6 +71,6 @@
       </form> -->
 
       <!-- Area do cliente  -->
-      <a class="navbar-brand" href="login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i></i> Login</a>
+      <a class="navbar-brand" href="../pages/login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i></i> Login</a>
     </div>
   </nav>

@@ -1,6 +1,10 @@
 <!-- Cabeçalho -->
 <?php
-require '../includes/header.php'
+require '../includes/header.php';
+include_once '../includes/conexao.php';
+
+$dados = filter_input_array(INPUT_POST,FILTER_DEFAULT);
+
 ?>
 
 <!-- Conteudo -->
@@ -10,14 +14,14 @@ require '../includes/header.php'
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-<form>
+<form method="post" id="login-form" class="form" action= "">
   <div class="form-group">
     <label for="exampleInputEmail1">Endereço de email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+    <input type="email" class="form-control" id="exampleInputEmail1" name="useremail" aria-describedby="emailHelp" placeholder="Seu email">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="userpass" placeholder="Senha">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">

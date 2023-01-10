@@ -97,6 +97,16 @@ require '../includes/header.php'
                         required>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="col-md-12 mb-3">
+                    <label>Escolha Seu Plano</label>
+                    <select class="custom-select">
+                        <option selected>Plano</option>
+                        <option value="1">Basic - R$80</option>
+                        <option value="2">Premium - R$100</option>
+                        <option value="3">Gold - R$250</option>
+                    </select>
+                </div>
             <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>

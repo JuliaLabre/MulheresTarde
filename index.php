@@ -1,7 +1,7 @@
 <?php
 require 'includes/header.php'
 ?>
-</div>
+<div class="wrap">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center">
@@ -83,6 +83,7 @@ require 'includes/header.php'
           contribui para a redução da pressão arterial, diminuindo os riscos de doenças cardíacas</p>
       </div>
     </div>
+  </div>
   </div>
 
 <?php
