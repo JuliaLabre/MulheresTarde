@@ -107,16 +107,18 @@ require '../includes/header.php'
                         <option value="3">Gold - R$250</option>
                     </select>
                 </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                    <label class="form-check-label" for="invalidCheck2">
-                        Declaro que todas as informações prestadas são verdadeiras.
-                    </label>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Declaro que todas as informações prestadas são verdadeiras.
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
         </form>
     </div>
 </div>
