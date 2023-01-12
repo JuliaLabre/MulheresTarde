@@ -2,6 +2,8 @@
 <?php
 require '../includes/header.php';
 include_once '../includes/conexao.php';
+session_start();
+ob_start();
 
 $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -9,7 +11,7 @@ $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if (!empty($dadoslogin['btnlogin'])) {
 
-$buscalogin = "SELECT matricula, nome, emailaluno, senha
+$buscalogin = "SELECT matricula, nome, emailaluno, senha, foto
                         FROM aluno
                         WHERE emailaluno =:usuario
                         LIMIT 1";
@@ -23,13 +25,20 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
     var_dump($resposta);
 
     if(password_verify($dadoslogin['senha'],$resposta['senha'])){
-  header("location:../pages/perfil.php");
+      $_SESSION['nome'] = $resposta['nome'];
+      $_SESSION['foto'] = $resposta['foto'];
+
+       header("location:../pages/perfil.php");
+    }else{
+      $_SESSION['msg'] = "Error: Usuário ou senha inválidos";
+}
 }   else{
-  echo 'Usuário ou senha inválidos';
+  $_SESSION['msg'] = "Error: Usuário ou senha inválidos";
 }
-}else{
-  echo 'Usuário ou senha inválidos';
 }
+if(isset($_SESSION['msg'])){
+  echo $_SESSION['msg'];
+  unset($_SESSION['msg']);
 }
 
 ?>
