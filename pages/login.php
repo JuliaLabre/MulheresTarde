@@ -3,10 +3,9 @@
 require '../includes/header.php';
 include_once '../includes/conexao.php';
 
-?>
-
-<?php
 $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+//echo "senha".password_hash(123,PASSWORD_DEFAULT);
 
 if (!empty($dadoslogin['btnlogin'])) {
 
@@ -22,15 +21,15 @@ $resultado->execute();
 if(($resultado) AND ($resultado->rowCount()!= 0)){
     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
     var_dump($resposta);
-}else{
-  echo 'Usuário ou senha inválidos';
-}
-if(password_verify($dadoslogin['senha'],$resposta['senha'])){
-  header("location:../pages/perfil.php");
-}else{
-  echo 'Usuário ou senha inválidos';
-}
 
+    if(password_verify($dadoslogin['senha'],$resposta['senha'])){
+  header("location:../pages/perfil.php");
+}   else{
+  echo 'Usuário ou senha inválidos';
+}
+}else{
+  echo 'Usuário ou senha inválidos';
+}
 }
 
 ?>
@@ -60,6 +59,7 @@ if(password_verify($dadoslogin['senha'],$resposta['senha'])){
 <div class="col-md-4"></div>
 </div>
 </div>
+<hr>
 <div class="text-center"> Ainda não é um aluno ? <a href="../pages/matricula.php">Cadastre-se aqui</a></div>
 </div>
 <!-- Footer -->

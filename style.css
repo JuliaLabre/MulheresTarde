@@ -88,4 +88,8 @@ html {
      background:#212529;
    }
 
+   .carousel-inner > .carousel-item img{
+     height: 500px;
+   }
+
   
