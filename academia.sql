@@ -4,13 +4,6 @@ CREATE DATABASE academia CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 USE academia;
 
-CREATE TABLE endereco (
-CEP CHAR(9) PRIMARY KEY,
-rua VARCHAR(60) NOT NULL,
-bairro VARCHAR(40) NOT NULL,
-cidade VARCHAR(40) NOT NULL,
-UF CHAR(2) NOT NULL);
-
 CREATE TABLE aluno (
 matricula INTEGER PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(60) NOT NULL,
@@ -24,8 +17,8 @@ datanascimento DATE NOT NULL,
 CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
-foto VARCHAR(255),
-FOREIGN KEY(CEP) REFERENCES endereco(CEP));
+foto VARCHAR(255)
+);
 
 CREATE TABLE funcionario (
 CPFfuncionario CHAR (14) PRIMARY KEY,
@@ -39,8 +32,8 @@ CEP CHAR(9) NOT NULL,
 numerocasa SMALLINT NOT NULL,
 complemento VARCHAR(30),
 foto VARCHAR(255),
-cargo VARCHAR(40) NOT NULL,
-FOREIGN KEY(CEP) REFERENCES endereco(CEP));
+cargo VARCHAR(40) NOT NULL
+);
 
 CREATE TABLE professor(
 idprofessor INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -93,26 +86,6 @@ CREATE TABLE aulasaluno(
         quantidade INTEGER NOT NULL,
         FOREIGN KEY (CPFfuncionario) REFERENCES funcionario(CPFfuncionario),
         FOREIGN KEY (codigoproduto) REFERENCES produto (codigoproduto)
-    );
-    INSERT INTO endereco(
-        CEP,
-        rua,
-        bairro,
-        cidade,
-        UF
-    )VALUES(
-        '23085-610',
-        'Rua Pauwels',
-        'Campo Grande',
-        'Rio de Janeiro',
-        'RJ'
-    ),
-    (
-        '26551-090',
-        'Travessa Elpidio',
-        'Cruzeiro do Sul',
-        'Mesquita',
-        'RJ'
     );
     INSERT INTO aluno(
         nome,

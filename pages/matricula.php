@@ -7,15 +7,15 @@ require '../includes/header.php'
 <div class="wrap">
     <h2 class='text-center'>Dados para a Matrícula:</h2>
     <div class="container">
-        <form>
+        <form method='post' action='controlealuno.php'>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nome Completo</label>
-                    <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
+                    <input name="nome" type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
                 </div>
                 <div class="col-md-2 mb-3 ">
                     <label for="telefone">Telefone</label>
-                    <input type="text" placeholder="(99) 99999-9999" class="form-control"
+                    <input name="telefone" type="text" placeholder="(99) 99999-9999" class="form-control"
                         onkeypress="$(this).mask('(00)00000-0000')">
                 </div>
                 <div class="col-md-4 mb-3">
@@ -24,40 +24,40 @@ require '../includes/header.php'
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend2">@</span>
                         </div>
-                        <input type="email" class="form-control" id="validationDefaultUsername" placeholder="Email"
+                        <input name="email" type="email" class="form-control" id="validationDefaultUsername" placeholder="Email"
                             aria-describedby="inputGroupPrepend2" required>
                     </div>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="validationDefault02">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="validationDefault02" placeholder="Data de Nascimento"
+                    <input name="dn" type="date" class="form-control" id="validationDefault02" placeholder="Data de Nascimento"
                         required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md-2 mb-3">
                     <label>Sexo</label>
-                    <select class="custom-select">
+                    <select name="sexo" class="custom-select">
                         <option selected>Sexo</option>
-                        <option value="1">Feminino</option>
-                        <option value="2">Masculino</option>
+                        <option type="radio" value="F">Feminino</option>
+                        <option type="radio" value="M">Masculino</option>
                     </select>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="validationDefault03">CPF</label>
-                    <input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00'); "
+                    <input name="CPF" type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00'); "
                         placeholder="123.456.789-10" required>
                 </div>
 
                 <div class="col-md-3 mb-3">
                     <label for="validationDefault04">RG</label>
-                    <input type="text" class="form-control" id="validationDefault04" placeholder="12.345.678-9"
+                    <input name="RG" type="text" class="form-control" id="validationDefault04" placeholder="12.345.678-9"
                         required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label>Foto de Perfil</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile">
+                        <input name="foto" type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Carregue sua foto de perfil</label>
                     </div>
                 </div>
@@ -65,20 +65,20 @@ require '../includes/header.php'
             <div class="form-row">
                 <div class="col-md-2 mb-3">
                     <label for="cep">CEP</label>
-                    <input class="form-control" placeholder="12345-67" name="cep" type="text" id="cep" value=""
+                    <input name="CEP" class="form-control" placeholder="12345-67" name="cep" type="text" id="cep" value=""
                         size="10" maxlength="9" onblur="pesquisacep(this.value);">
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault03">Endereço</label>
-                    <input name="rua" type="text" id="rua" size="60" class="form-control" placeholder="Rua" required>
+                    <input type="text" id="rua" size="60" class="form-control" placeholder="Rua" required>
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="validationDefault05">Número</label>
-                    <input type="text" class="form-control" id="validationDefault05" placeholder="Nº" required>
+                    <input name="num" type="text" class="form-control" id="validationDefault05" placeholder="Nº" required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault05">Complemento</label>
-                    <input type="text" class="form-control" id="validationDefault05" placeholder="Complemento" required>
+                    <input name="comple" type="text" class="form-control" id="validationDefault05" placeholder="Complemento" required>
                 </div>
             </div>
             <div class="form-row">
@@ -98,14 +98,18 @@ require '../includes/header.php'
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-md-12 mb-3">
+                <div class="col-md-6 mb-3">
                     <label>Escolha Seu Plano</label>
                     <select class="custom-select">
                         <option selected>Plano</option>
-                        <option value="1">Basic - R$80</option>
-                        <option value="2">Premium - R$100</option>
-                        <option value="3">Gold - R$250</option>
+                        <option value="Basic">Basic - R$80</option>
+                        <option value="Premium">Premium - R$100</option>
+                        <option value="Gold">Gold - R$250</option>
                     </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                <label>Senha</label>
+                <input type="password" class="form-control" name="senha" placeholder="Senha">
                 </div>
                 <div class="form-row">
                     <div class="col-md-12 mb-3">
@@ -118,7 +122,7 @@ require '../includes/header.php'
                     </div>
                 </div>
 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Matricular-se' name='btncad' >
         </form>
     </div>
 </div>
