@@ -5,6 +5,31 @@ try{
 $dadosmatricula = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if (!empty($dadosmatricula['btncad'])) {
+
+    $vazio = false;
+
+    $dadosmatricula = array_map('trim', $dadosmatricula);
+    if (in_array("", $dadosmatricula)) {
+        $vazio = true;
+        echo  "<script>
+            alert('Preencher todos os campos!!!');
+            parent.location = 'formaluno.php';
+            </script>";
+   
+
+    } else if(!filter_var($dadosmatricula['email'], FILTER_VALIDATE_EMAIL)) {
+        $vazio = true;
+        echo  "<script>
+            alert('Informe um e-mail válido!!!');
+            parent.location = 'formaluno.php';
+            </script>";
+    }
+
+    if (!$vazio) {
+
+    $senha = password_hash($dadosmatricula['senha'], PASSWORD_DEFAULT);   
+
+
     $sql = "INSERT INTO aluno (nome, telefone, emailaluno, CPF, RG, sexo, datanascimento, CEP, numerocasa, complemento, foto, senha)
     values(:nome, :telefone, :emailaluno,:CPF, :RG, :sexo, :datanascimento, :CEP, :numerocasa, :complemento, :foto, :senha)";
 
