@@ -105,7 +105,7 @@ CREATE TABLE aulasaluno(
             '(21)99999-9999',
             '133.333.333-33',
             '23.815.589-55',
-           'Senha123',
+           '$2y$10$uAcN4hUFJFAjRUe6O9XlI.1PfUz4ppmI3ML4rnpqtFo6u4FxTWpX.',
             '1997/10/20',
             '23085-610',
             '55',
@@ -114,11 +114,11 @@ CREATE TABLE aulasaluno(
             'M',
             'joca@silva.com'
         ),(
-            'Linka Dinn',
+            'Linn Dinn',
             '(21)99999-9997',
             '133.333.333-32',
             '23.815.589-54',
-            'Senha123',
+            '$2y$10$uAcN4hUFJFAjRUe6O9XlI.1PfUz4ppmI3ML4rnpqtFo6u4FxTWpX.',
             '1998/09/15',
             '26551-090',
             '55',
@@ -126,7 +126,59 @@ CREATE TABLE aulasaluno(
             'https://randomuser.me/api/portraits/women/72.jpg',
             'F',
             'linka@dinn.com'
-        );
+        ),(
+            'Edleuza',
+            '21985431578',
+            'ed@leuza.com',
+            '156.151.515-61',
+            '12.569.658.5',
+            '$2y$10$ti8sYIpBiAHLY5ZjmIUw5ugMPrAkTTxxVJiWjY6cFfLJyzVvsCsom',
+            'F',
+            '1988-01-10',
+            '23059020',
+            55,
+            '1',
+            'https://randomuser.me/api/portraits/women/70.jpg')
+        ),(
+            'Rafaela',
+            '(21)98543-2157', 
+            'Rafa@ela.com', 
+            '156.151.515-60', 
+            '12.569.658.4', 
+            '$2y$10$20WXFwINguTB68EsiR78VetWaiWfN24yGP29ETIiD9X9Ce4.BuK0u', 
+            'F', 
+            '2001-01-01', 
+            '23059060', 
+            20, 
+            'Casa', 
+            'https://randomuser.me/api/portraits/women/60.jpg'
+            ),(
+            'Pedro Pedrosa',
+            '(21)88888-8888', 
+            'pedro@pedrosa.com', 
+            '123.456.123-25', 
+            '123123123', 
+            '$2y$10$ZQluUp2R1gY8iZGTc/t2..PZKPoEdYrJdGB3OymSjRl9qgOFzpAue', 
+            'M', 
+            '2005-05-05', 
+            '23059040', 
+            30, 
+            '2', 
+            'https://randomuser.me/api/portraits/men/60.jpg'
+            ),(
+            'Cristian Silva', 
+            '(21)88888-5555', 
+            'cristian@silva.com', 
+            '156.151.515-00', 
+            '12.569.658.8', 
+            '$2y$10$9CUGD9vpnUQsipR9sIOX9ej.KrYtx4zEjo/6Ycx2HwnCtGkIRWdF.', 
+            'M', 
+            '2000-06-20', 
+            '23059010', 
+            20, 
+            'Casa', 
+            'https://randomuser.me/api/portraits/men/50.jpg');
+
         INSERT INTO funcionario(
             CPFfuncionario,
             nome,

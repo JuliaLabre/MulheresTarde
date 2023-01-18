@@ -54,13 +54,18 @@ require '../includes/header.php'
                     <input name="RG" type="text" class="form-control" id="validationDefault04" placeholder="12.345.678-9"
                         required>
                 </div>
-                <div class="col-md-4 mb-3">
+                <!-- não funciona o envio de foto por ele
+                    <div class="col-md-4 mb-3"> 
                     <label>Foto de Perfil</label>
                     <div class="custom-file">
                         <input name="foto" type="file" class="custom-file-input" id="customFile">
                         <label class="custom-file-label" for="customFile">Carregue sua foto de perfil</label>
                     </div>
-                </div>
+                </div>-->
+                <div class="col-md-4 mb-3"> 
+                    <label>Foto de Perfil</label>
+                    <input name="foto" type="text" class="form-control"  placeholder="Sua Foto Aqui" required>
+                    </div>
             </div>
             <div class="form-row">
                 <div class="col-md-2 mb-3">

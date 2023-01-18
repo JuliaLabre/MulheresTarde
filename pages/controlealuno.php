@@ -13,7 +13,7 @@ if (!empty($dadosmatricula['btncad'])) {
         $vazio = true;
         echo  "<script>
             alert('Preencher todos os campos!!!');
-            parent.location = 'formaluno.php';
+            parent.location = 'matricula.php';
             </script>";
    
 
@@ -21,7 +21,7 @@ if (!empty($dadosmatricula['btncad'])) {
         $vazio = true;
         echo  "<script>
             alert('Informe um e-mail válido!!!');
-            parent.location = 'formaluno.php';
+            parent.location = 'matricula.php';
             </script>";
     }
 
@@ -45,18 +45,30 @@ if (!empty($dadosmatricula['btncad'])) {
     $salvar -> bindParam(':numerocasa', $dadosmatricula['num'], PDO::PARAM_INT);
     $salvar -> bindParam(':complemento', $dadosmatricula['comple'], PDO::PARAM_STR);
     $salvar -> bindParam(':foto', $dadosmatricula['foto'], PDO::PARAM_STR);
-    $salvar -> bindParam(':senha', $dadosmatricula['senha'], PDO::PARAM_STR);
+    $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
     $salvar -> execute();
 
 
-    if ($salvar -> rowCount()){
-        echo "Usuário cadastrado com sucesso!";
-        unset($dadosmatricula);
+    if ($salvar->rowCount()) {
+        
+        echo "<script>
+        alert('Usuário cadastrado com sucesso!!');
+        parent.location = 'matricula.php';
+        </script>";
+
+        unset($dadoscad);
     } else {
-        echo "Usuário não cadastrado, tente novamente!";
+        echo "<script>
+        alert('Usuário não cadastrado!');
+        parent.location = 'matricula.php';
+        </script>";
+        
     }
+
+}
 }
 }
 catch(PDOException $erro){
     echo $erro;
+
 }

@@ -7,7 +7,7 @@
         <li><a class="navbar-link" href="../pages/sobre.php">Nossa Academia</a></li>
         <li><a class="navbar-link" href="../pages/planos.php">Conheça os Planos</a></li>
         <li><a class="navbar-link" href="../pages/login.php">Área do Aluno</a></li>
-        <li><a class="navbar-link" href="../pages/loginadmin.php">Administrativo</a></li>
+        <li><a class="navbar-link" href="../pages/admin.php">Administrativo</a></li>
 
       </div>
       <div class="col-md-3">
