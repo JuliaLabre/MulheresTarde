@@ -7,7 +7,7 @@ ob_start();
 
 $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-echo "senha".password_hash(123,PASSWORD_DEFAULT);
+//echo "senha".password_hash(123,PASSWORD_DEFAULT);
 
 if (!empty($dadoslogin['btnlogin'])) {
 
@@ -22,7 +22,7 @@ $resultado->execute();
 
 if(($resultado) AND ($resultado->rowCount()!= 0)){
     $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
-    var_dump($resposta);
+    //var_dump($resposta);
 // salvando dados na variavel
     if(password_verify($dadoslogin['senha'],$resposta['senha'])){
       $_SESSION['nome'] = $resposta['nome'];

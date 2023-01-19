@@ -24,7 +24,7 @@ CREATE TABLE funcionario (
 CPFfuncionario CHAR (14) PRIMARY KEY,
 nome VARCHAR(60) NOT NULL,
 telefone VARCHAR(15) NOT NULL,
-emailafunc VARCHAR(40) NOT NULL,
+emailfunc VARCHAR(40) NOT NULL,
 RG CHAR(15) NOT NULL,
 senha VARCHAR(255) NOT NULL,
 sexo CHAR(1) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE aulasaluno(
             'M',
             'joca@silva.com'
         ),(
-            'Linn Dinn',
+            'Linn Dinha',
             '(21)99999-9997',
             '133.333.333-32',
             '23.815.589-54',
@@ -128,56 +128,57 @@ CREATE TABLE aulasaluno(
             'linka@dinn.com'
         ),(
             'Edleuza',
-            '21985431578',
-            'ed@leuza.com',
+            '(21)98543-1578',
             '156.151.515-61',
             '12.569.658.5',
             '$2y$10$ti8sYIpBiAHLY5ZjmIUw5ugMPrAkTTxxVJiWjY6cFfLJyzVvsCsom',
-            'F',
             '1988-01-10',
             '23059020',
             55,
             '1',
-            'https://randomuser.me/api/portraits/women/70.jpg')
+            'https://randomuser.me/api/portraits/women/70.jpg',
+            'F',             
+            'ed@leuza.com'
         ),(
-            'Rafaela',
-            '(21)98543-2157', 
-            'Rafa@ela.com', 
-            '156.151.515-60', 
-            '12.569.658.4', 
+             'Rafaela',
+             '(21)98543-2157',  
+             '156.151.515-60', 
+             '12.569.658.4', 
             '$2y$10$20WXFwINguTB68EsiR78VetWaiWfN24yGP29ETIiD9X9Ce4.BuK0u', 
-            'F', 
             '2001-01-01', 
-            '23059060', 
-            20, 
+             '23059060', 
+             20, 
             'Casa', 
-            'https://randomuser.me/api/portraits/women/60.jpg'
+            'https://randomuser.me/api/portraits/women/60.jpg',
+            'F',
+            'Rafa@ela.com'
             ),(
-            'Pedro Pedrosa',
-            '(21)88888-8888', 
-            'pedro@pedrosa.com', 
-            '123.456.123-25', 
-            '123123123', 
-            '$2y$10$ZQluUp2R1gY8iZGTc/t2..PZKPoEdYrJdGB3OymSjRl9qgOFzpAue', 
-            'M', 
-            '2005-05-05', 
-            '23059040', 
-            30, 
-            '2', 
-            'https://randomuser.me/api/portraits/men/60.jpg'
-            ),(
-            'Cristian Silva', 
-            '(21)88888-5555', 
-            'cristian@silva.com', 
-            '156.151.515-00', 
-            '12.569.658.8', 
-            '$2y$10$9CUGD9vpnUQsipR9sIOX9ej.KrYtx4zEjo/6Ycx2HwnCtGkIRWdF.', 
-            'M', 
-            '2000-06-20', 
-            '23059010', 
-            20, 
-            'Casa', 
-            'https://randomuser.me/api/portraits/men/50.jpg');
+             'Pedro Pedrosa',
+             '(21)88888-8888', 
+             '123.456.123-25', 
+             '12.312.312-3', 
+             '$2y$10$ZQluUp2R1gY8iZGTc/t2..PZKPoEdYrJdGB3OymSjRl9qgOFzpAue', 
+              '2005-05-05', 
+             '23059040', 
+             30, 
+             '2', 
+             'https://randomuser.me/api/portraits/men/60.jpg',
+             'M',
+             'pedro@pedrosa.com'
+             ),(             
+             'Cristian Silva', 
+             '(21)88888-5555', 
+             '156.151.515-00', 
+             '12.569.658.8', 
+             '$2y$10$9CUGD9vpnUQsipR9sIOX9ej.KrYtx4zEjo/6Ycx2HwnCtGkIRWdF.',
+              '2000-06-20', 
+             '23059010', 
+             20, 
+             'Casa', 
+             'https://randomuser.me/api/portraits/men/50.jpg',
+             'M',
+             'cristian@silva.com'            
+             );
 
         INSERT INTO funcionario(
             CPFfuncionario,
@@ -190,14 +191,14 @@ CREATE TABLE aulasaluno(
             complemento,
             foto,
             sexo,
-            emailafunc,
+            emailfunc,
             cargo
-         ) VALUES (
+         )VALUES(
             '123.456.789.10',
             'Zé das Couves',
             '(21)99999-9920',
             '12.345.678-99',
-            'Senha123',
+            '$2y$10$Absol9xn2R8md5T9ftKXJ.17r2NavLXiORbi6mSN1ny7zz0.DZoZm',
             '26551-090',
             '1',
             'Quadra 15',
@@ -210,7 +211,7 @@ CREATE TABLE aulasaluno(
             'Maria das Dores',
             '(21)99999-9950',
             '12.345.678-90',
-            'Senha123',
+            '$2y$10$Absol9xn2R8md5T9ftKXJ.17r2NavLXiORbi6mSN1ny7zz0.DZoZm',
             '23085-610',
             '2',
             'Ap101',
@@ -223,7 +224,7 @@ CREATE TABLE aulasaluno(
             'Maria dos Amores',
             '(21)99999-9988',
             '12.345.678-00',
-            'Senha123',
+            '$2y$10$Absol9xn2R8md5T9ftKXJ.17r2NavLXiORbi6mSN1ny7zz0.DZoZm',
             '23085-610',
             '2',
             'Ap105',
@@ -265,7 +266,7 @@ CREATE TABLE aulasaluno(
                 horario,
                 idprofessor,
                 idatividade
-            ) VALUES (
+            ) VALUES(
                 '2022-12-06',
                 '15h as 16:30h',
                 '1',

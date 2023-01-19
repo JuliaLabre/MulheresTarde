@@ -52,7 +52,7 @@ require '../includes/header.php'
                 <div class="col-md-3 mb-3">
                     <label for="validationDefault04">RG</label>
                     <input name="RG" type="text" class="form-control" id="validationDefault04" placeholder="12.345.678-9"
-                        required>
+                    onkeypress="$(this).mask('00.000.000-0');" required>
                 </div>
                 <!-- não funciona o envio de foto por ele
                     <div class="col-md-4 mb-3"> 

@@ -91,6 +91,9 @@ html {
    .carousel-inner > .carousel-item img{
      height: 500px;
    }
+   .perfil img{
+    border-radius: 50%;
+  }
 
    
 
