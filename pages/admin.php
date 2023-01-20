@@ -25,14 +25,16 @@ ob_start();
   <title>High Fit</title>
 </head>
 <div class="wrap">
-<h2 class='text-center'>Olá, <?php echo $_SESSION['nome']?>! Seja bem 
-<?php 
-if($_SESSION['sexo'] == 'M'){
-   echo 'vindo'; 
-  }else{
-     echo 'vinda';
-    }     
-     ?>
+<h2 class='text-center'>Seja bem 
+    <?php 
+      if($_SESSION['sexo'] == 'M'){
+               echo 'vindo'; 
+      }else{
+              echo 'vinda';
+       }     
+     ?>, 
+     <?php echo $_SESSION['cargo'] ?> 
+          <?php echo $_SESSION['nome'] ?>
    </h2>
    <div class="perfil">
 <img src="<?php echo $_SESSION['foto'] ?>">

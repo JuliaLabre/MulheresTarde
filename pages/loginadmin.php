@@ -31,10 +31,14 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
 
        header("location:../pages/admin.php");
     }else{
-      $_SESSION['msg'] = "Error: Usuário ou senha inválidos";
+      $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+      Error: Usuário ou senha inválidos!
+     </div>';
 }
 }   else{
-  $_SESSION['msg'] = "Error: Usuário ou senha inválidos";
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
+  Error: Usuário ou senha inválidos!
+ </div>';
 }
 }
 if(isset($_SESSION['msg'])){
