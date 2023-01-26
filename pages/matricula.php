@@ -7,7 +7,8 @@ require '../includes/header.php'
 <div class="wrap">
     <h2 class='text-center'>Dados para a Matrícula:</h2>
     <div class="container">
-        <form method='post' action='controlealuno.php'>
+        <!-- enctype - é como vai enviar os arquivos (files), ele vai 'a parte' do formulario, tem seu proprio array -->
+        <form method="post" action="controlealuno.php" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nome Completo</label>
@@ -37,7 +38,7 @@ require '../includes/header.php'
             <div class="form-row">
                 <div class="col-md-2 mb-3">
                     <label>Sexo</label>
-                    <select name="sexo" class="custom-select">
+                    <select name="sexo" class="custom-select" required>
                         <option selected>Sexo</option>
                         <option type="radio" value="F">Feminino</option>
                         <option type="radio" value="M">Masculino</option>
@@ -54,18 +55,13 @@ require '../includes/header.php'
                     <input name="RG" type="text" class="form-control" id="validationDefault04" placeholder="12.345.678-9"
                     onkeypress="$(this).mask('00.000.000-0');" required>
                 </div>
-                <!-- não funciona o envio de foto por ele
-                    <div class="col-md-4 mb-3"> 
-                    <label>Foto de Perfil</label>
-                    <div class="custom-file">
-                        <input name="foto" type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">Carregue sua foto de perfil</label>
-                    </div>
-                </div>-->
                 <div class="col-md-4 mb-3"> 
                     <label>Foto de Perfil</label>
-                    <input name="foto" type="text" class="form-control"  placeholder="Sua Foto Aqui" required>
+                    <div class="custom-file">
+                        <input name="foto" type="file" class="form-control">
+                        <!-- <label class="custom-file-label form-control" for="customFile">Carregue sua foto de perfil</label> -->
                     </div>
+                </div>
             </div>
             <div class="form-row">
                 <div class="col-md-2 mb-3">

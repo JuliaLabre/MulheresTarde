@@ -4,6 +4,34 @@ include_once '../includes/conexao.php';
 try{
 $dadosmatricula = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+//verifica a foto para o salvamento
+if(isset($_FILES['foto'])){
+    $arquivo = ($_FILES['foto']);
+    var_dump($arquivo);
+    if($arquivo['error']){
+        echo 'Erro ao carregar arquivo';
+        header("Location: matricula.php");
+    }
+    
+    $pasta = "fotos/"; //Salva nessa pasta
+    $nomearquivo = $arquivo['name']; //pega o nome do arquivo da array que é criada automaticamente no envio do formulario
+    $novonome = uniqid(); //nome unico, para não haver duplicidade e substituição
+    $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION)); //Coloca o nome do arquivo com a sua extensão
+
+    if($extensao != "jpg" && $extensao != "png" && $extensao != "webp"){
+        echo "<script>
+        alert('Essa extensão de arquivo não é aceita');
+        </script>";
+    }else{
+        $salvaimg = move_uploaded_file($arquivo['tmp_name'],$pasta.$novonome.".".$extensao);
+        if($salvaimg){
+            $path = $pasta.$novonome.".".$extensao;
+        }
+    }
+
+}
+
+
 if (!empty($dadosmatricula['btncad'])) {
 
     $vazio = false;
@@ -43,8 +71,8 @@ if (!empty($dadosmatricula['btncad'])) {
     $salvar -> bindParam(':cep', $dadosmatricula['cep'], PDO::PARAM_STR);
     $salvar -> bindParam(':numerocasa', $dadosmatricula['num'], PDO::PARAM_INT);
     $salvar -> bindParam(':complemento', $dadosmatricula['comple'], PDO::PARAM_STR);
-    $salvar -> bindParam(':foto', $dadosmatricula['foto'], PDO::PARAM_STR);
-    $salvar->bindParam(':senha', $senha, PDO::PARAM_STR);
+    $salvar -> bindParam(':foto', $path, PDO::PARAM_STR);
+    $salvar-> bindParam(':senha', $senha, PDO::PARAM_STR);
     $salvar -> execute();
 
 
@@ -93,7 +121,7 @@ if (!empty($dadosmatricula['btneditar'])){
     $salvar -> bindParam(':cep', $dadosmatricula['cep'], PDO::PARAM_STR);
     $salvar -> bindParam(':numerocasa', $dadosmatricula['num'], PDO::PARAM_INT);
     $salvar -> bindParam(':complemento', $dadosmatricula['comple'], PDO::PARAM_STR);
-    $salvar -> bindParam(':foto', $dadosmatricula['foto'], PDO::PARAM_STR);
+    $salvar -> bindParam(':foto', $path, PDO::PARAM_STR);
     $salvar -> bindParam(':matricula', $dadosmatricula['matricula'], PDO::PARAM_INT);
     $salvar -> execute();
 

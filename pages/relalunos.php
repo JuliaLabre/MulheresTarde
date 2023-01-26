@@ -12,7 +12,8 @@ $limitereg = 3;
 $inicio = ($limitereg * $pag) - $limitereg;
 
 //se quiser buscar mais dados só incluir 
-$busca = "SELECT CPF, nome, telefone, emailaluno, matricula FROM aluno WHERE status = 'A' LIMIT $inicio , $limitereg";
+$busca = "SELECT CPF, nome, telefone, emailaluno, matricula 
+            FROM aluno WHERE status = 'A' LIMIT $inicio , $limitereg";
 
 $resultado = $conn->prepare($busca); 
 $resultado->execute();

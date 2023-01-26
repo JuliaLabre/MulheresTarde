@@ -35,7 +35,19 @@ ob_start();
 
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Marque suas Atividades
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="">Spinning</a>
+            <a class="dropdown-item" href="">Jump</a>
+            <a class="dropdown-item" href="">Hidroginástica</a>
+            <a class="dropdown-item" href="">Pilates</a>
+          </div>
         </li>
+
         <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -47,6 +59,7 @@ ob_start();
             <a class="dropdown-item" href="../pages/diversos.php">Diversos</a>
           </div>
         </li>
+
       </ul>
       <!-- botâo de pesquisar comentado, pois achei desnecessário no momento
         
