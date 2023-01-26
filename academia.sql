@@ -5,41 +5,43 @@ CREATE DATABASE academia CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE academia;
 
 CREATE TABLE aluno (
-matricula INTEGER PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(60) NOT NULL,
-telefone VARCHAR(15) NOT NULL,
-emailaluno VARCHAR(40) NOT NULL,
-CPF CHAR(14) NOT NULL,
-RG VARCHAR(15) NOT NULL,
-senha VARCHAR(255) NOT NULL,
-sexo CHAR(1) NOT NULL,
-datanascimento DATE NOT NULL,
-CEP CHAR(9) NOT NULL,
-numerocasa SMALLINT NOT NULL,
-complemento VARCHAR(30),
-foto VARCHAR(255)
+    matricula INTEGER PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    emailaluno VARCHAR(40) NOT NULL,
+    CPF CHAR(14) NOT NULL,
+    RG VARCHAR(15) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    sexo CHAR(1) NOT NULL,
+    datanascimento DATE NOT NULL,
+    CEP CHAR(9) NOT NULL,
+    numerocasa SMALLINT NOT NULL,
+    complemento VARCHAR(30),
+    foto VARCHAR(255),
+    status CHAR(1) DEFAULT 'A'
 );
 
 CREATE TABLE funcionario (
-CPFfuncionario CHAR (14) PRIMARY KEY,
-nome VARCHAR(60) NOT NULL,
-telefone VARCHAR(15) NOT NULL,
-emailfunc VARCHAR(40) NOT NULL,
-RG CHAR(15) NOT NULL,
-senha VARCHAR(255) NOT NULL,
-sexo CHAR(1) NOT NULL,
-CEP CHAR(9) NOT NULL,
-numerocasa SMALLINT NOT NULL,
-complemento VARCHAR(30),
-foto VARCHAR(255),
-cargo VARCHAR(40) NOT NULL
+    CPFfuncionario CHAR (14) PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    emailfunc VARCHAR(40) NOT NULL,
+    RG CHAR(15) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    sexo CHAR(1) NOT NULL,
+    CEP CHAR(9) NOT NULL,
+    numerocasa SMALLINT NOT NULL,
+    complemento VARCHAR(30),
+    foto VARCHAR(255),
+    cargo VARCHAR(40) NOT NULL,
+    status CHAR(1) DEFAULT 'A'
 );
 
 CREATE TABLE professor(
-idprofessor INTEGER PRIMARY KEY AUTO_INCREMENT,
-disponibilidade VARCHAR(40) NOT NULL,
-CPFfuncionario VARCHAR(14) NOT NULL,
-FOREIGN KEY(CPFfuncionario) REFERENCES funcionario(CPFfuncionario));
+    idprofessor INTEGER PRIMARY KEY AUTO_INCREMENT,
+    disponibilidade VARCHAR(40) NOT NULL,
+    CPFfuncionario VARCHAR(14) NOT NULL,
+    FOREIGN KEY(CPFfuncionario) REFERENCES funcionario(CPFfuncionario));
 
 CREATE TABLE atividade (
     idatividade INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -66,7 +68,7 @@ CREATE TABLE aulasaluno(
     idaulasaluno INTEGER PRIMARY KEY AUTO_INCREMENT,
     matricula INTEGER NOT NULL,
     idaula INTEGER NOT NULL,
-    FOREIGN KEY(matricula) REFERENCES aluno(matricula),
+    FOREIGN KEY(matricula) REFERENCES aluno(matricula) ON DELETE CASCADE ON UPDATE CASCADE, --esse comando que inica em ON permite que as exclusoes e atualizações sejam feitas em cascata 
     FOREIGN KEY(idaula) REFERENCES aula (idaula)
 );
     CREATE TABLE produto(
@@ -99,7 +101,8 @@ CREATE TABLE aulasaluno(
         complemento,
         foto,
         sexo,
-        emailaluno
+        emailaluno,
+        status
         )VALUES(
             'Joca da Silva',
             '(21)99999-9999',
@@ -112,7 +115,8 @@ CREATE TABLE aulasaluno(
             'fundos',
             'https://randomuser.me/api/portraits/men/14.jpg',
             'M',
-            'joca@silva.com'
+            'joca@silva.com',
+            'A'
         ),(
             'Linn Dinha',
             '(21)99999-9997',
@@ -125,7 +129,8 @@ CREATE TABLE aulasaluno(
             'fundos',
             'https://randomuser.me/api/portraits/women/72.jpg',
             'F',
-            'linka@dinn.com'
+            'linka@dinn.com',
+            'A'
         ),(
             'Edleuza',
             '(21)98543-1578',
@@ -138,47 +143,51 @@ CREATE TABLE aulasaluno(
             '1',
             'https://randomuser.me/api/portraits/women/70.jpg',
             'F',             
-            'ed@leuza.com'
+            'ed@leuza.com',
+            'A'
         ),(
-             'Rafaela',
-             '(21)98543-2157',  
-             '156.151.515-60', 
-             '12.569.658.4', 
+            'Rafaela',
+            '(21)98543-2157',  
+            '156.151.515-60', 
+            '12.569.658.4', 
             '$2y$10$20WXFwINguTB68EsiR78VetWaiWfN24yGP29ETIiD9X9Ce4.BuK0u', 
             '2001-01-01', 
-             '23059060', 
-             20, 
+            '23059060', 
+            20, 
             'Casa', 
             'https://randomuser.me/api/portraits/women/60.jpg',
             'F',
-            'Rafa@ela.com'
+            'Rafa@ela.com',
+            'A'
             ),(
-             'Pedro Pedrosa',
-             '(21)88888-8888', 
-             '123.456.123-25', 
-             '12.312.312-3', 
-             '$2y$10$ZQluUp2R1gY8iZGTc/t2..PZKPoEdYrJdGB3OymSjRl9qgOFzpAue', 
-              '2005-05-05', 
-             '23059040', 
-             30, 
-             '2', 
-             'https://randomuser.me/api/portraits/men/60.jpg',
-             'M',
-             'pedro@pedrosa.com'
-             ),(             
-             'Cristian Silva', 
-             '(21)88888-5555', 
-             '156.151.515-00', 
-             '12.569.658.8', 
-             '$2y$10$9CUGD9vpnUQsipR9sIOX9ej.KrYtx4zEjo/6Ycx2HwnCtGkIRWdF.',
-              '2000-06-20', 
-             '23059010', 
-             20, 
-             'Casa', 
-             'https://randomuser.me/api/portraits/men/50.jpg',
-             'M',
-             'cristian@silva.com'            
-             );
+            'Pedro Pedrosa',
+            '(21)88888-8888', 
+            '123.456.123-25', 
+            '12.312.312-3', 
+            '$2y$10$ZQluUp2R1gY8iZGTc/t2..PZKPoEdYrJdGB3OymSjRl9qgOFzpAue', 
+            '2005-05-05', 
+            '23059040', 
+            30, 
+            '2', 
+            'https://randomuser.me/api/portraits/men/60.jpg',
+            'M',
+            'pedro@pedrosa.com',
+            'A'
+            ),(             
+            'Cristian Silva', 
+            '(21)88888-5555', 
+            '156.151.515-00', 
+            '12.569.658.8', 
+            '$2y$10$9CUGD9vpnUQsipR9sIOX9ej.KrYtx4zEjo/6Ycx2HwnCtGkIRWdF.',
+            '2000-06-20', 
+            '23059010', 
+            20, 
+            'Casa', 
+            'https://randomuser.me/api/portraits/men/50.jpg',
+            'M',
+            'cristian@silva.com',
+            'A'            
+            );
 
         INSERT INTO funcionario(
             CPFfuncionario,

@@ -12,7 +12,7 @@ if (!empty($dadoslogin['btnlogin'])) {
 
 $buscalogin = "SELECT CPFfuncionario, nome, emailfunc, senha, foto, sexo, cargo
                         FROM funcionario
-                        WHERE emailfunc =:usuario
+                        WHERE emailfunc =:usuario AND status = 'A'
                         LIMIT 1";
            
 $resultado= $conn->prepare($buscalogin); 

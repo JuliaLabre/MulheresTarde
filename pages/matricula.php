@@ -70,7 +70,7 @@ require '../includes/header.php'
             <div class="form-row">
                 <div class="col-md-2 mb-3">
                     <label for="cep">CEP</label>
-                    <input name="CEP" class="form-control" placeholder="12345-67" name="cep" type="text" id="cep" value=""
+                    <input class="form-control" placeholder="12345-67" name="cep" type="text" id="cep" value=""
                         size="10" maxlength="9" onblur="pesquisacep(this.value);">
                 </div>
                 <div class="col-md-4 mb-3">
@@ -79,7 +79,7 @@ require '../includes/header.php'
                 </div>
                 <div class="col-md-2 mb-3">
                     <label for="validationDefault05">Número</label>
-                    <input name="num" type="text" class="form-control" id="validationDefault05" placeholder="Nº" required>
+                    <input name="num" type="number" class="form-control" id="validationDefault05" placeholder="Nº" required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault05">Complemento</label>

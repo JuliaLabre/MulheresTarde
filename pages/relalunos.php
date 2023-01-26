@@ -1,7 +1,7 @@
 <?php
 
 include_once '../includes/conexao.php';
-include'../includes/header.php';
+include '../includes/header.php';
 
 //definir quantos registros por vez queremos exibir por página
 $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
@@ -12,7 +12,7 @@ $limitereg = 3;
 $inicio = ($limitereg * $pag) - $limitereg;
 
 //se quiser buscar mais dados só incluir 
-$busca = "SELECT CPF, nome, telefone, emailaluno, matricula FROM aluno LIMIT $inicio , $limitereg";
+$busca = "SELECT CPF, nome, telefone, emailaluno, matricula FROM aluno WHERE status = 'A' LIMIT $inicio , $limitereg";
 
 $resultado = $conn->prepare($busca); 
 $resultado->execute();
@@ -52,7 +52,7 @@ if (($resultado) AND ($resultado->rowCount() != 0)){
         <input type="submit" class="btn btn-primary" name="editar" value="Editar">
         </td>
         <td>
-        <?php echo "<a href='excluir.php?matricula=$matricula'>"; ?>
+        <?php echo "<a href='excluir.php?matricula=$matricula'>" ?>
         <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
         </td>
       </tr>
@@ -71,7 +71,7 @@ if (($resultado) AND ($resultado->rowCount() != 0)){
 
 //Contar os registros no BD
 
-$qtregistro = "SELECT COUNT(matricula) AS registros FROM aluno";
+$qtregistro = "SELECT COUNT(matricula) AS registros FROM aluno WHERE status = 'A'";
 $resultado = $conn->prepare($qtregistro);
 $resultado->execute();
 $resposta = $resultado->fetch(PDO::FETCH_ASSOC);

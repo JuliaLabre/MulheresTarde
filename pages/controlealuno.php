@@ -24,14 +24,13 @@ if (!empty($dadosmatricula['btncad'])) {
             parent.location = 'matricula.php';
             </script>";
     }
-
-    if (!$vazio) {
+      if (!$vazio) {
 
     $senha = password_hash($dadosmatricula['senha'], PASSWORD_DEFAULT);   
 
 
     $sql = "INSERT INTO aluno (nome, telefone, emailaluno, CPF, RG, sexo, datanascimento, CEP, numerocasa, complemento, foto, senha)
-    values(:nome, :telefone, :emailaluno,:CPF, :RG, :sexo, :datanascimento, :CEP, :numerocasa, :complemento, :foto, :senha)";
+    values(:nome, :telefone, :emailaluno,:CPF, :RG, :sexo, :datanascimento, :cep, :numerocasa, :complemento, :foto, :senha)";
 
     $salvar= $conn ->prepare($sql);
     $salvar -> bindParam(':nome', $dadosmatricula['nome'],PDO::PARAM_STR);
@@ -41,7 +40,7 @@ if (!empty($dadosmatricula['btncad'])) {
     $salvar -> bindParam(':RG', $dadosmatricula['RG'], PDO::PARAM_STR);
     $salvar -> bindParam(':sexo', $dadosmatricula['sexo'], PDO::PARAM_STR);
     $salvar -> bindParam(':datanascimento', $dadosmatricula['dn'], PDO::PARAM_STR);
-    $salvar -> bindParam(':CEP', $dadosmatricula['cep'], PDO::PARAM_STR);
+    $salvar -> bindParam(':cep', $dadosmatricula['cep'], PDO::PARAM_STR);
     $salvar -> bindParam(':numerocasa', $dadosmatricula['num'], PDO::PARAM_INT);
     $salvar -> bindParam(':complemento', $dadosmatricula['comple'], PDO::PARAM_STR);
     $salvar -> bindParam(':foto', $dadosmatricula['foto'], PDO::PARAM_STR);
@@ -81,7 +80,7 @@ if (!empty($dadosmatricula['btneditar'])){
     }
     $sql = "UPDATE aluno 
     set nome=:nome, telefone=:telefone, emailaluno=:emailaluno, CPF=:CPF, RG=:RG, sexo=:sexo, datanascimento=:datanascimento, 
-    CEP=:CEP, numerocasa=:numerocasa, complemento=:complemento, foto=:foto WHERE matricula = :matricula";
+    CEP=:cep, numerocasa=:numerocasa, complemento=:complemento, foto=:foto WHERE matricula = :matricula";
 
     $salvar= $conn ->prepare($sql);
     $salvar -> bindParam(':nome', $dadosmatricula['nome'],PDO::PARAM_STR);
@@ -91,7 +90,7 @@ if (!empty($dadosmatricula['btneditar'])){
     $salvar -> bindParam(':RG', $dadosmatricula['RG'], PDO::PARAM_STR);
     $salvar -> bindParam(':sexo', $dadosmatricula['sexo'], PDO::PARAM_STR);
     $salvar -> bindParam(':datanascimento', $dadosmatricula['dn'], PDO::PARAM_STR);
-    $salvar -> bindParam(':CEP', $dadosmatricula['cep'], PDO::PARAM_STR);
+    $salvar -> bindParam(':cep', $dadosmatricula['cep'], PDO::PARAM_STR);
     $salvar -> bindParam(':numerocasa', $dadosmatricula['num'], PDO::PARAM_INT);
     $salvar -> bindParam(':complemento', $dadosmatricula['comple'], PDO::PARAM_STR);
     $salvar -> bindParam(':foto', $dadosmatricula['foto'], PDO::PARAM_STR);

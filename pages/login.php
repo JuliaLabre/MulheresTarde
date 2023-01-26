@@ -13,7 +13,7 @@ if (!empty($dadoslogin['btnlogin'])) {
 
 $buscalogin = "SELECT matricula, nome, emailaluno, senha, foto, sexo, datanascimento
                         FROM aluno
-                        WHERE emailaluno =:usuario
+                        WHERE emailaluno =:usuario AND status = 'A'
                         LIMIT 1";
            
 $resultado= $conn->prepare($buscalogin); 

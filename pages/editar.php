@@ -13,7 +13,7 @@ if (empty($id)) {
     exit();
 }
 
-$sql =  "SELECT * FROM aluno WHERE matricula = $id LIMIT 1";
+$sql =  "SELECT * FROM aluno WHERE matricula = $id AND status = 'A' LIMIT 1";
            
 $resultado= $conn->prepare($sql); 
 $resultado->execute();
