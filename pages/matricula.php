@@ -9,7 +9,7 @@ require '../includes/header.php'
     <div class="container">
         <!-- enctype - é como vai enviar os arquivos (files), ele vai 'a parte' do formulario, tem seu proprio array -->
         <form method="post" action="controlealuno.php" enctype="multipart/form-data">
-            <div class="form-row">
+            <div class="form-row"> 
                 <div class="col-md-4 mb-3">
                     <label for="validationDefault01">Nome Completo</label>
                     <input name="nome" type="text" class="form-control" id="validationDefault01" placeholder="Nome" required>
@@ -62,7 +62,7 @@ require '../includes/header.php'
                         <!-- <label class="custom-file-label form-control" for="customFile">Carregue sua foto de perfil</label> -->
                     </div>
                 </div>
-            </div>
+            </div> 
             <div class="form-row">
                 <div class="col-md-2 mb-3">
                     <label for="cep">CEP</label>

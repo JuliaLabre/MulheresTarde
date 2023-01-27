@@ -12,21 +12,26 @@ if(isset($_FILES['foto'])){
         echo 'Erro ao carregar arquivo';
         header("Location: matricula.php");
     }
-    
-    $pasta = "fotos/"; //Salva nessa pasta
-    $nomearquivo = $arquivo['name']; //pega o nome do arquivo da array que é criada automaticamente no envio do formulario
-    $novonome = uniqid(); //nome unico, para não haver duplicidade e substituição
+   
+    // o erro ao carregar a foto era o caminho, como estou em pastas, precisei acrescentar os ../
+    $pasta = "../fotos/"; //Salva nessa pasta    
+    $nomearquivo = $arquivo['name']; //pega o nome do arquivo da array que é criada automaticamente no envio do formulario    
+    $novonome = uniqid(); //nome unico, para não haver duplicidade e substituição  
     $extensao = strtolower(pathinfo($nomearquivo, PATHINFO_EXTENSION)); //Coloca o nome do arquivo com a sua extensão
-
+    
     if($extensao != "jpg" && $extensao != "png" && $extensao != "webp"){
         echo "<script>
         alert('Essa extensão de arquivo não é aceita');
         </script>";
-    }else{
-        $salvaimg = move_uploaded_file($arquivo['tmp_name'],$pasta.$novonome.".".$extensao);
+
+    } else {
+        
+        $salvaimg = move_uploaded_file($arquivo['tmp_name'], $pasta . $novonome . "." . $extensao );
+
         if($salvaimg){
             $path = $pasta.$novonome.".".$extensao;
         }
+       
     }
 
 }
