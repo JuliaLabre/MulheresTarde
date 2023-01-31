@@ -4,8 +4,11 @@
 require_once '../includes/header.php';
 require_once '../includes/conexao.php';
 
+
 session_start();
 ob_start();
+//tem que colocar que só pode acessar logado
+
 
 ?>
 <div class="wrap">
@@ -30,8 +33,10 @@ ob_start();
 </div>
 </div>
 <hr>
-<a href="../pages/matricula.php"><button type="submit" class="btn btn-outline-dark">Cadastro de Aluno</button></a>
-<a href="../pages/relalunos.php"><button type="submit" class="btn btn-outline-dark">Relatório de Alunos</button></a>
+<a href="matricula.php"><button type="submit" class="btn btn-outline-dark">Cadastro de Aluno</button></a>
+<a href="relalunos.php"><button type="submit" class="btn btn-outline-dark">Relatório de Alunos</button></a>
+<a href="formproduto.php"><button type="submit" class="btn btn-outline-dark">Cadastrar Produtos</button></a>
+<a href="relproduto.php"><button type="submit" class="btn btn-outline-dark">Editar Produtos</button></a>
 <hr>
 
 </div>
