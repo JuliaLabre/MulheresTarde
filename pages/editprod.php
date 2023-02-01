@@ -1,11 +1,11 @@
 <?php
 include_once '../includes/conexao.php';
-require '../includes/header.php';
+require '../includes/menuadmin.php';
 
 session_start();
 ob_start();
 
-$id = filter_input(INPUT_GET, "codigoproduto", FILTER_SANITIZE_NUMBER_INT);
+$id = filter_input(INPUT_GET, "idproduto", FILTER_SANITIZE_NUMBER_INT);
 
 if (empty($id)) {
     $_SESSION['msg'] = "Erro: Produto não encontrado!";
@@ -13,7 +13,7 @@ if (empty($id)) {
     exit();
 }
 
-$sql =  "SELECT * FROM produto,categoria WHERE codigoproduto = $id LIMIT 1";
+$sql =  "SELECT * FROM produto WHERE codigoproduto = $id LIMIT 1;";
            
 $resultado= $conn->prepare($sql); 
 $resultado->execute();
@@ -32,7 +32,10 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
 <div class="wrap">
 <h2 class="text-center">Edição de produtos da <strong>High Fit</strong>.</h2>
     <div class="container">
+
         <form method="post" action="controleproduto.php" enctype="multipart/form-data">
+
+        <input name="id" type="hidden" value="<?php echo $id ?>">
 
         <div class="form-row">        
                 <div class="col-md-4">                
@@ -64,13 +67,30 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
             <div class="col-md-4">                
                 <label for="Name">Categoria</label>
                 <select class="form-control" name="categoria">
-                <option selected value<?php echo $idcategoria ?>><?php echo $nomecategoria?></option>
-    <?php if(($resultado)&&($resultado->rowCount()!=0)) { 
+    <?php 
+    
+    $categoria = $idcategoria;
+
+    $sql = "SELECT * FROM categoria";
+
+    $resultado= $conn->prepare($sql); 
+    $resultado->execute();
+
+    if(($resultado)&&($resultado->rowCount()!=0)) { 
             while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
                 extract($linha);
 
     ?>                
-                <option value="<?php echo $idcategoria ?>"><?php echo $nomecategoria?></option>
+            <option value="<?php echo $idcategoria ?>"
+                
+                <?php
+                if($categoria == $idcategoria){
+                    echo "selected";
+                }
+
+                ?>                
+                >
+                <?php echo $nomecategoria?></option>
     <?php
             }
         }
@@ -78,10 +98,6 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
                  </select>        
             </div>
 
-            <div class="col-md-4">                
-                <label for="Name">Imagem</label>
-                <input type="file" class="form-control" name="foto"  value="<?php echo $foto ?>">                
-            </div>
         </div>
         <br>
         <input class="btn btn-primary btn-lg btn-block" type="submit" value="Editar" name="prodeditar" >

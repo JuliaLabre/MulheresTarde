@@ -5,8 +5,19 @@
 html {
      scroll-behavior: smooth;
    }
+
+.alunos{
+     border-radius: 50%;
+}
+
+.produtos{
+     /* border-radius: 50%; */
+     height: 100px;
+     width: 100px;
+
+}
    
-   .imagens img {
+.imagens img {
      width: 100%;
      height: 300px;
      border-radius: 20%;
@@ -43,6 +54,7 @@ html {
      width: 100%;
      height: 210px;
 }
+
 
 .wrap {
      padding: 25px;

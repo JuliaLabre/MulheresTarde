@@ -1,6 +1,6 @@
 <?php
 include_once '../includes/conexao.php';
-require '../includes/header.php';
+require '../includes/menuadmin.php';
 
 
 session_start();

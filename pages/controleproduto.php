@@ -36,6 +36,46 @@ if(isset($_FILES['foto'])){
 
 }
 
+//recebe a foto
+
+if (!empty($formproduto['edftprod'])) {
+
+    $formproduto = array_map('trim', $formproduto);
+
+    var_dump($formproduto);
+
+    $sql = "UPDATE produto 
+    set foto=:foto
+    WHERE codigoproduto = :codigoproduto";
+
+    $salvar= $conn ->prepare($sql);
+    $salvar -> bindParam(':foto', $path,PDO::PARAM_STR);
+    $salvar -> bindParam(':codigoproduto', $formproduto['id'], PDO::PARAM_STR);
+    $salvar -> execute();
+
+
+    if ($salvar->rowCount()) {
+        
+        echo "<script>
+        alert('Foto atualizada com sucesso!!');
+        parent.location = 'edftprod.php';
+        </script>";
+
+        unset($formproduto);
+    } else {
+        echo "<script>
+        alert('Erro: Tente novamente!');
+        parent.location = 'edftprod.php';
+        </script>";
+        
+    }
+
+}
+
+
+
+// Recebe o cadastro do produto
+
 if (!empty($formproduto['cadprod'])) {
 
     $vazio = false;
@@ -83,23 +123,26 @@ if (!empty($formproduto['cadprod'])) {
 }
 
 }
+//Recebe a edição do produto
 
 if (!empty($formproduto['prodeditar'])){
     
     $formproduto = array_map('trim', $formproduto);
 
+    var_dump($formproduto);
+
     $sql = "UPDATE produto 
-    set nome=:nome, foto=:foto, cor=:cor, valor=:valor, tamanho=:tamanho, quantidade=:quantidade, idcategoria=:idcategoria, 
-    WHERE codigoproduto = ";
+    set nome=:nome, cor=:cor, valor=:valor, tamanho=:tamanho, quantidade=:quantidade, idcategoria=:idcategoria
+    WHERE codigoproduto = :codigoproduto";
 
     $salvar= $conn ->prepare($sql);
     $salvar -> bindParam(':nome', $formproduto['nome'],PDO::PARAM_STR);
-    $salvar -> bindParam(':foto', $path,PDO::PARAM_STR);
     $salvar -> bindParam(':cor', $formproduto['cor'],PDO::PARAM_STR);
     $salvar -> bindParam(':valor', $formproduto['valor'], PDO::PARAM_STR);
     $salvar -> bindParam(':tamanho', $formproduto['tamanho'], PDO::PARAM_STR);
     $salvar -> bindParam(':quantidade', $formproduto['quantidade'], PDO::PARAM_INT);
     $salvar -> bindParam(':idcategoria', $formproduto['categoria'], PDO::PARAM_STR);
+    $salvar -> bindParam(':codigoproduto', $formproduto['id'], PDO::PARAM_STR);
     $salvar -> execute();
 
 
@@ -107,14 +150,14 @@ if (!empty($formproduto['prodeditar'])){
         
         echo "<script>
         alert('Dados atualizados com sucesso!!');
-        parent.location = 'matricula.php';
+        parent.location = 'relproduto.php';
         </script>";
 
         unset($formproduto);
     } else {
         echo "<script>
         alert('Aluno não cadastrado!');
-        parent.location = 'matricula.php';
+        parent.location = 'relproduto.php';
         </script>";
         
     }

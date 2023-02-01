@@ -1,7 +1,7 @@
 <?php
 
 include_once '../includes/conexao.php';
-include '../includes/header.php';
+require '../includes/menuadmin.php';
 
 //definir quantos registros por vez queremos exibir por página
 $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
@@ -12,7 +12,7 @@ $limitereg = 3;
 $inicio = ($limitereg * $pag) - $limitereg;
 
 //se quiser buscar mais dados só incluir 
-$busca = "SELECT CPF, nome, telefone, emailaluno, matricula 
+$busca = "SELECT *
             FROM aluno WHERE status = 'A' LIMIT $inicio , $limitereg";
 
 $resultado = $conn->prepare($busca); 
@@ -24,6 +24,7 @@ if (($resultado) AND ($resultado->rowCount() != 0)){
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">Foto</th>
       <th scope="col">Matrícula</th>
       <th scope="col">CPF</th>
       <th scope="col">Nome</th>
@@ -43,7 +44,8 @@ if (($resultado) AND ($resultado->rowCount() != 0)){
     
  ?>
         <tr>
-        <td scope="row"><?php echo $matricula ?></td>
+        <td scope="row"><a title="Editar foto" href="#"><img src="<?php echo $foto ?>" class="alunos"></a></td>
+        <td><?php echo $matricula ?></td>
         <td><?php echo $CPF ?></td>
         <td><?php echo $nome ?></td>
         <td><?php echo $telefone ?></td>

@@ -1,6 +1,6 @@
 <!-- Cabeçalho -->
 <?php
-require '../includes/header.php'
+require '../includes/menuadmin.php'
 ?>
 
 <!-- Conteudo -->
@@ -123,7 +123,7 @@ require '../includes/header.php'
                     </div>
                 </div>
 
-                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Matricular-se' name='btncad' >
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value='Matricular' name='btncad' >
         </form>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <!--parte administrativa, cadastrar alunos e etc...-->
 
 <?php
-require_once '../includes/header.php';
+require_once '../includes/menuadmin.php';
 require_once '../includes/conexao.php';
 
 
@@ -33,10 +33,7 @@ ob_start();
 </div>
 </div>
 <hr>
-<a href="matricula.php"><button type="submit" class="btn btn-outline-dark">Cadastro de Aluno</button></a>
-<a href="relalunos.php"><button type="submit" class="btn btn-outline-dark">Relatório de Alunos</button></a>
-<a href="formproduto.php"><button type="submit" class="btn btn-outline-dark">Cadastrar Produtos</button></a>
-<a href="relproduto.php"><button type="submit" class="btn btn-outline-dark">Editar Produtos</button></a>
+<a href=""><button type="submit" class="btn btn-outline-dark">Editar meu perfil</button></a>
 <hr>
 
 </div>

@@ -75,7 +75,7 @@ if(isset($_SESSION['msg'])){
 </div>
 </div>
 <hr>
-<div class="text-center"> Ainda não é um aluno ? <a href="../pages/matricula.php">Cadastre-se aqui</a></div>
+<div class="text-center"> Ainda não é um aluno ? Vá em alguma de nossas unidades e matricule-se já</div>
 </div>
 <!-- Footer -->
 <?php

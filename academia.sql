@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Jan-2023 às 20:51
+-- Tempo de geração: 01-Fev-2023 às 20:34
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -216,9 +216,18 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`codigoproduto`, `nome`, `foto`, `cor`, `valor`, `tamanho`, `quantidade`, `idcategoria`) VALUES
-(1, 'Top Red', '', 'Vermelho', 25, 'P', 30, 1),
-(2, 'Top Grey and Green', '', 'Cinza e verde', 20, 'M', 25, 1),
-(3, 'Top Branco', '', 'Branco', 20, 'M', 25, 1);
+(1, 'Top Red', '../fotosprodutos/63da9b31987b5.webp', 'Vermelho', 25, 'P', 30, 1),
+(2, 'Top Grey and Green', '../fotosprodutos/63da9b076b32b.webp', 'Cinza e verde', 20, 'M', 25, 1),
+(3, 'Top Branco', '../fotosprodutos/63da9b6280611.webp', 'Branco', 20, 'M', 25, 1),
+(5, 'Combo Suplementos', '../fotosprodutos/63da9df578097.webp', '--', 300, '1k', 10, 3),
+(6, 'Whey Protein', '../fotosprodutos/63da9e1d8950f.webp', '--', 50, '50', 15, 3),
+(7, 'Plastic Jar Mockup', '../fotosprodutos/63dab4bf196b7.webp', '--', 150, 'M', 50, 3),
+(8, 'Trio de Suplementos', '../fotosprodutos/63da9ec76a5a6.webp', '--', 150, 'M', 5, 3),
+(9, 'Garrafa Inox', '../fotosprodutos/63da9fe38c026.webp', 'Branca', 40, 'P', 20, 4),
+(10, 'Garrafa Sport', '../fotosprodutos/63daa00e94497.webp', 'Preta', 35, 'M', 9, 4),
+(11, 'Garrafas Mockups', '../fotosprodutos/63daa040bd228.webp', 'Diversas', 30, 'M', 10, 4),
+(12, 'Garrafa Clean', '../fotosprodutos/63daa063e6b50.webp', 'Transparente', 40, 'G', 15, 4),
+(13, 'Top Rosa', '../fotosprodutos/63daa12a8d216.avif', 'Rosa', 40, 'G', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -380,7 +389,7 @@ ALTER TABLE `habilitaprofessor`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
