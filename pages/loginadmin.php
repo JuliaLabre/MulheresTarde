@@ -3,9 +3,6 @@
 require '../includes/header.php';
 include_once '../includes/conexao.php';
 
-session_start();
-ob_start();
-
 $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 if (!empty($dadoslogin['btnlogin'])) {

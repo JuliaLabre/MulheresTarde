@@ -2,7 +2,7 @@
 
 include_once '../includes/conexao.php';
 require '../includes/menuadmin.php';
-
+//ta dando erro
 //definir quantos registros por vez queremos exibir por página
 $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
 $pag = (!empty($pagatual)) ? $pagatual : 1;

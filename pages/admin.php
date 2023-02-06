@@ -7,6 +7,7 @@ require_once '../includes/conexao.php';
 
 session_start();
 ob_start();
+
 //tem que colocar que só pode acessar logado
 
 

@@ -15,7 +15,7 @@ https://ordinarycoders.com/blog/article/bootstrap-pricing-table-example
   <div class="container-fluid">
     <div class="container p-5">
       <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4">
+        <div class="col-lg-4 col-md-12 mb-4">        
           <div class="card card1 h-100">
             <div class="card-body">
              
@@ -30,18 +30,15 @@ https://ordinarycoders.com/blog/article/bootstrap-pricing-table-example
               <ul>
                 <li>Área de musculação e aeróbicos</li>
                 <li>Treinos Online</li>
-                <li>Sem Fidelidade</li>
-                
+                <li>Sem Fidelidade</li>                
               </ul>
-            </div>
-
-            
+            </div>            
           </div>
         </div>
+
         <div class="col-lg-4 col-md-12 mb-4">
           <div class="card card1 h-100">
-            <div class="card-body">
-             
+            <div class="card-body">             
               <h5 class="card-title">Premium</h5>
               <small class='text-muted'>Individual</small>
               <br><br>
@@ -53,18 +50,15 @@ https://ordinarycoders.com/blog/article/bootstrap-pricing-table-example
               <ul>
                 <li>Acesso a academias da rede</li>
                 <li>Cadeira de massagem</li>
-                <li>+Tudo do plano Basic</li>
-                
+                <li>+Tudo do plano Basic</li>                
               </ul>
-            </div>
-
-            
+            </div>            
           </div>
         </div>
+
         <div class="col-lg-4 col-md-12 mb-4">
           <div class="card card1 h-100">
-            <div class="card-body">
-             
+            <div class="card-body">             
               <h5 class="card-title">Gold</h5>
               <small class='text-muted'>Grupo</small>
               <br><br>
@@ -81,13 +75,13 @@ https://ordinarycoders.com/blog/article/bootstrap-pricing-table-example
                 <li>+Tudo do plano Premium</li>
                 
               </ul>
-            </div>
-
-            
+            </div>            
           </div>
         </div>
+
       </div>    
     </div>
+</div>
 </div>
  
 <!-- Footer -->

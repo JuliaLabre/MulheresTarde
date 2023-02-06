@@ -1,3 +1,13 @@
+<?php
+session_start();
+ob_start();
+
+if(!isset($_SESSION["quant"])){
+  $_SESSION["quant"]=0;
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -63,7 +73,16 @@
           <a class="nav-link" href="../pages/planos.php">Conheça nossos Planos</a>
         </li>
       </ul>
-      <!-- botâo de pesquisar comentado, pois achei desnecessário no momento
+      <ul class="navbar-nav">
+      <li>
+        <a class="navbar-brand" href="../pages/frmcarrinho.php" >
+        <i class="fa-solid fa-bag-shopping fa-fw">
+            </i><?php
+            if($_SESSION["quant"]>0){
+           echo $_SESSION["quant"];}
+            ?></a></li> 
+           
+      <!-- botão de pesquisar comentado, pois achei desnecessário no momento
         
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
@@ -71,6 +90,7 @@
       </form> -->
 
       <!-- Area do cliente  -->
-      <a class="navbar-brand" href="../pages/login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i></i> Login</a>
+      <li><a class="navbar-brand" href="../pages/login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i>Login</a></li>
+      </ul>
     </div>
   </nav>
