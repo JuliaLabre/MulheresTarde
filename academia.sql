@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Fev-2023 às 20:34
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 06-Fev-2023 às 20:54
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ CREATE TABLE `aluno` (
   `complemento` varchar(30) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
   `status` char(1) DEFAULT 'A'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aluno`
@@ -68,7 +68,7 @@ CREATE TABLE `atividade` (
   `idatividade` int(11) NOT NULL,
   `nomeatividade` varchar(60) NOT NULL,
   `descrição` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `atividade`
@@ -90,7 +90,7 @@ CREATE TABLE `aula` (
   `horario` varchar(30) NOT NULL,
   `idprofessor` int(11) NOT NULL,
   `idatividade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aula`
@@ -112,7 +112,7 @@ CREATE TABLE `aulasaluno` (
   `idaulasaluno` int(11) NOT NULL,
   `matricula` int(11) NOT NULL,
   `idaula` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `aulasaluno`
@@ -125,13 +125,27 @@ INSERT INTO `aulasaluno` (`idaulasaluno`, `matricula`, `idaula`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `codigoproduto` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `valor` double NOT NULL,
+  `quantcompra` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
   `idcategoria` int(11) NOT NULL,
   `nomecategoria` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -163,7 +177,7 @@ CREATE TABLE `funcionario` (
   `foto` varchar(255) DEFAULT NULL,
   `cargo` varchar(40) NOT NULL,
   `status` char(1) DEFAULT 'A'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -184,7 +198,7 @@ CREATE TABLE `habilitaprofessor` (
   `idhabilitacao` int(11) NOT NULL,
   `idatividade` int(11) NOT NULL,
   `idprofessor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `habilitaprofessor`
@@ -209,7 +223,7 @@ CREATE TABLE `produto` (
   `tamanho` char(2) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `idcategoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produto`
@@ -227,7 +241,19 @@ INSERT INTO `produto` (`codigoproduto`, `nome`, `foto`, `cor`, `valor`, `tamanho
 (10, 'Garrafa Sport', '../fotosprodutos/63daa00e94497.webp', 'Preta', 35, 'M', 9, 4),
 (11, 'Garrafas Mockups', '../fotosprodutos/63daa040bd228.webp', 'Diversas', 30, 'M', 10, 4),
 (12, 'Garrafa Clean', '../fotosprodutos/63daa063e6b50.webp', 'Transparente', 40, 'G', 15, 4),
-(13, 'Top Rosa', '../fotosprodutos/63daa12a8d216.avif', 'Rosa', 40, 'G', 5, 1);
+(13, 'Top Rosa', '../fotosprodutos/63daa12a8d216.avif', 'Rosa', 40, 'G', 5, 1),
+(14, 'Luva antiatrito', '../fotosprodutos/63e14f971ec57.jpg', 'Preto e Roxo', 20, 'P', 5, 4),
+(15, 'Bolsa', '../fotosprodutos/63e150114a8cb.avif', 'Laranja', 30, 'M', 5, 4),
+(16, 'Tênis para correr', '../fotosprodutos/63e1508adbd41.avif', 'Preto', 299, '38', 2, 4),
+(17, 'Fone sem fio', '../fotosprodutos/63e1510115392.avif', 'Cinza', 30, 'ún', 50, 4),
+(18, 'Fone Bluetooth', '../fotosprodutos/63e15137be75d.avif', 'Preto', 70, 'ún', 50, 4),
+(19, 'Blusa com capuz', '../fotosprodutos/63e1515fa0f03.avif', 'Preto', 30, 'M', 5, 1),
+(20, 'Blusa Térmica', '../fotosprodutos/63e1518747622.avif', 'Cinza', 30, 'G', 5, 1),
+(21, 'Blusa Térmica', '../fotosprodutos/63e151a1ac017.avif', 'Preto', 30, 'G', 5, 1),
+(22, 'Whey Massa Muscular', '../fotosprodutos/63e151ed3b6e7.avif', '--', 150, 'P', 5, 3),
+(23, 'Complemento Esportivo', '../fotosprodutos/63e1520e74703.avif', '--', 150, 'P', 5, 3),
+(24, 'Protein', '../fotosprodutos/63e15230e6ac5.avif', '--', 70, 'P', 5, 3),
+(25, 'Relaxante', '../fotosprodutos/63e152576d973.avif', '--', 70, 'P', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -239,7 +265,7 @@ CREATE TABLE `professor` (
   `idprofessor` int(11) NOT NULL,
   `disponibilidade` varchar(40) NOT NULL,
   `CPFfuncionario` varchar(14) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `professor`
@@ -262,7 +288,7 @@ CREATE TABLE `venda` (
   `data` date NOT NULL,
   `codigoproduto` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `venda`
@@ -389,7 +415,7 @@ ALTER TABLE `habilitaprofessor`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `codigoproduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `professor`
