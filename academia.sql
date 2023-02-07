@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Fev-2023 às 20:54
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 07-Fev-2023 às 21:05
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,7 @@ CREATE TABLE `aluno` (
   `complemento` varchar(30) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
   `status` char(1) DEFAULT 'A'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `aluno`
@@ -68,7 +68,7 @@ CREATE TABLE `atividade` (
   `idatividade` int(11) NOT NULL,
   `nomeatividade` varchar(60) NOT NULL,
   `descrição` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `atividade`
@@ -90,7 +90,7 @@ CREATE TABLE `aula` (
   `horario` varchar(30) NOT NULL,
   `idprofessor` int(11) NOT NULL,
   `idatividade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `aula`
@@ -112,7 +112,7 @@ CREATE TABLE `aulasaluno` (
   `idaulasaluno` int(11) NOT NULL,
   `matricula` int(11) NOT NULL,
   `idaula` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `aulasaluno`
@@ -134,7 +134,7 @@ CREATE TABLE `carrinho` (
   `valor` double NOT NULL,
   `quantcompra` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -145,7 +145,7 @@ CREATE TABLE `carrinho` (
 CREATE TABLE `categoria` (
   `idcategoria` int(11) NOT NULL,
   `nomecategoria` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -177,7 +177,7 @@ CREATE TABLE `funcionario` (
   `foto` varchar(255) DEFAULT NULL,
   `cargo` varchar(40) NOT NULL,
   `status` char(1) DEFAULT 'A'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `funcionario`
@@ -198,7 +198,7 @@ CREATE TABLE `habilitaprofessor` (
   `idhabilitacao` int(11) NOT NULL,
   `idatividade` int(11) NOT NULL,
   `idprofessor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `habilitaprofessor`
@@ -207,6 +207,19 @@ CREATE TABLE `habilitaprofessor` (
 INSERT INTO `habilitaprofessor` (`idhabilitacao`, `idatividade`, `idprofessor`) VALUES
 (1, 1, 1),
 (2, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `item`
+--
+
+CREATE TABLE `item` (
+  `iditem` int(11) NOT NULL,
+  `idvenda` int(11) NOT NULL,
+  `codigoproduto` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -223,7 +236,7 @@ CREATE TABLE `produto` (
   `tamanho` char(2) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `idcategoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `produto`
@@ -265,7 +278,7 @@ CREATE TABLE `professor` (
   `idprofessor` int(11) NOT NULL,
   `disponibilidade` varchar(40) NOT NULL,
   `CPFfuncionario` varchar(14) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Extraindo dados da tabela `professor`
@@ -283,20 +296,10 @@ INSERT INTO `professor` (`idprofessor`, `disponibilidade`, `CPFfuncionario`) VAL
 
 CREATE TABLE `venda` (
   `idvenda` int(11) NOT NULL,
-  `CPFfuncionario` char(14) NOT NULL,
+  `matricula` int(11) NOT NULL,
   `valorvenda` double NOT NULL,
-  `data` date NOT NULL,
-  `codigoproduto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `venda`
---
-
-INSERT INTO `venda` (`idvenda`, `CPFfuncionario`, `valorvenda`, `data`, `codigoproduto`, `quantidade`) VALUES
-(1, '123.456.789.50', 40, '2022-12-12', 2, 2),
-(2, '123.456.789.50', 50, '2022-12-12', 1, 2);
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Índices para tabelas despejadas
@@ -350,6 +353,14 @@ ALTER TABLE `habilitaprofessor`
   ADD KEY `idatividade` (`idatividade`);
 
 --
+-- Índices para tabela `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`iditem`),
+  ADD KEY `fk_produto` (`codigoproduto`),
+  ADD KEY `fk_venda` (`idvenda`);
+
+--
 -- Índices para tabela `produto`
 --
 ALTER TABLE `produto`
@@ -368,8 +379,7 @@ ALTER TABLE `professor`
 --
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`idvenda`),
-  ADD KEY `CPFfuncionario` (`CPFfuncionario`),
-  ADD KEY `codigoproduto` (`codigoproduto`);
+  ADD KEY `fk_aluno` (`matricula`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -410,6 +420,12 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `habilitaprofessor`
   MODIFY `idhabilitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `item`
+--
+ALTER TABLE `item`
+  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
@@ -454,6 +470,13 @@ ALTER TABLE `habilitaprofessor`
   ADD CONSTRAINT `habilitaprofessor_ibfk_1` FOREIGN KEY (`idatividade`) REFERENCES `atividade` (`idatividade`);
 
 --
+-- Limitadores para a tabela `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `fk_produto` FOREIGN KEY (`codigoproduto`) REFERENCES `produto` (`codigoproduto`),
+  ADD CONSTRAINT `fk_venda` FOREIGN KEY (`idvenda`) REFERENCES `venda` (`idvenda`);
+
+--
 -- Limitadores para a tabela `produto`
 --
 ALTER TABLE `produto`
@@ -469,8 +492,7 @@ ALTER TABLE `professor`
 -- Limitadores para a tabela `venda`
 --
 ALTER TABLE `venda`
-  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`CPFfuncionario`) REFERENCES `funcionario` (`CPFfuncionario`),
-  ADD CONSTRAINT `venda_ibfk_2` FOREIGN KEY (`codigoproduto`) REFERENCES `produto` (`codigoproduto`);
+  ADD CONSTRAINT `fk_aluno` FOREIGN KEY (`matricula`) REFERENCES `aluno` (`matricula`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
