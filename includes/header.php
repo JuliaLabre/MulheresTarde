@@ -5,8 +5,6 @@ ob_start();
 if(!isset($_SESSION["quant"])){
   $_SESSION["quant"]=0;
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

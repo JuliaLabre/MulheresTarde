@@ -7,7 +7,7 @@ require '../includes/header.php';
 $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
 	$pag = (!empty($pagatual)) ? $pagatual : 1;
 
-    $limitereg = 6;
+    $limitereg = 10;
 
     $inicio = ($limitereg * $pag) - $limitereg;
 
@@ -65,7 +65,11 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
 
 <?php
 //Contar os registros no banco
-     $qtregistro = "SELECT COUNT(codigoproduto) AS registros FROM produto";
+    $qtregistro = "SELECT COUNT(codigoproduto) AS registros FROM produto p,categoria c WHERE 
+    c.idcategoria = p.idcategoria and
+    c.nomecategoria = 'roupas' and
+    p.quantidade > 0 "; 
+
      $resultado = $conn->prepare($qtregistro);
      $resultado->execute();
      $resposta = $resultado->fetch(PDO::FETCH_ASSOC);

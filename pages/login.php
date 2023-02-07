@@ -2,8 +2,7 @@
 <?php
 require '../includes/header.php';
 include_once '../includes/conexao.php';
-session_start();
-ob_start();
+
 
 $dadoslogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -30,13 +29,19 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
       $_SESSION['sexo'] = $resposta ['sexo'];
       $_SESSION['datanascimento'] = $resposta['datanascimento'];
 
+      if($_SESSION['carrinho']==true){
+        $_SESSION['matricula'] = $resposta['matricula'];
+        header("Location:../pages/frmcarrinho.php");
+
+      } else{
        header("location:../pages/perfil.php");
+      }
     }else{
       $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
       Error: Usuário ou senha inválidos!
      </div>';
 }
-}   else{
+}else{
   $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">
   Error: Usuário ou senha inválidos!
  </div>';

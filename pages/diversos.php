@@ -4,11 +4,12 @@ include_once '../includes/conexao.php';
 require '../includes/header.php';
 
 $pagatual = filter_input(INPUT_GET, "page", FILTER_SANITIZE_NUMBER_INT);
-	$pag = (!empty($pagatual)) ? $pagatual : 1;
 
-    $limitereg = 6;
+$pag = (!empty($pagatual)) ? $pagatual : 1;
 
-    $inicio = ($limitereg * $pag) - $limitereg;
+$limitereg = 10;
+
+$inicio = ($limitereg * $pag) - $limitereg;
 
     $busca= "SELECT p.codigoproduto,p.nome,p.valor,p.foto
     FROM produto p,categoria c WHERE 
@@ -62,7 +63,11 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
 
  <?php
 //Contar os registros no banco
-     $qtregistro = "SELECT COUNT(codigoproduto) AS registros FROM produto";
+     $qtregistro = "SELECT COUNT(codigoproduto) AS registros FROM produto p,categoria c WHERE 
+     c.idcategoria = p.idcategoria and
+     c.nomecategoria = 'diversos' and
+     p.quantidade > 0 ";   
+       
      $resultado = $conn->prepare($qtregistro);
      $resultado->execute();
      $resposta = $resultado->fetch(PDO::FETCH_ASSOC);
@@ -74,7 +79,8 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
       // Maximo de links      
       $maximo = 2;
 
-      echo "<a href='diversos.php?page=1'>Primeira</a> ";
+      echo "<a href='diversos.php?page=1'> Primeira </a> ";
+
     // Chamar página anterior verificando a quantidade de páginas menos 1 e 
     // também verificando se já não é primeira página
     for ($anterior = $pag - $maximo; $anterior <= $pag - 1; $anterior++) {
