@@ -16,6 +16,10 @@ html {
      width: 100px;
 
 }
+.perfil-bonito {
+     border-radius: 50%;
+     width: 40px;
+}
 .imagens img {
      width: 100%;
      height: 300px;

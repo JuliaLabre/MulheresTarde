@@ -88,7 +88,36 @@ if(!isset($_SESSION["quant"])){
       </form> -->
 
       <!-- Area do cliente  -->
-      <li><a class="navbar-brand" href="../pages/login.php"><i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i>Login</a></li>
+      <?php 
+     
+      // Se o usuário está logado...
+      if (isset($_SESSION['nome'])) :
+
+      ?>
+      <li>
+        <a class="navbar-brand" href="../pages/perfil.php" title="Perfil de <?php echo $_SESSION['nome'] ?>">
+          <img class="perfil-bonito" src="<?php echo $_SESSION['foto'] ?>" alt="Perfil de <?php echo $_SESSION['nome'] ?>">
+          Perfil
+        </a>
+        </li>
+
+      <?php
+
+      // Se não está logado...
+      else :
+
+      ?>
+      <li>
+        <a class="navbar-brand" href="../pages/perfil.php" title="Login de usuário" >
+        <i class="fa-solid fa-arrow-right-to-bracket fa-fw"></i>
+          <span>Login</span>
+        </a>
+        </li>
+
+      <?php
+      endif;
+      ?>
+      
       </ul>
     </div>
   </nav>

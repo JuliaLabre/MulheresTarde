@@ -28,9 +28,9 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
       $_SESSION['foto'] = $resposta['foto'];
       $_SESSION['sexo'] = $resposta ['sexo'];
       $_SESSION['datanascimento'] = $resposta['datanascimento'];
+      $_SESSION['matricula'] = $resposta['matricula'];
 
       if($_SESSION['carrinho']==true){
-        $_SESSION['matricula'] = $resposta['matricula'];
         header("Location:../pages/frmcarrinho.php");
 
       } else{

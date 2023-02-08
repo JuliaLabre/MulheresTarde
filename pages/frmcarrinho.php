@@ -1,7 +1,7 @@
 <?php
-
-include_once '../includes/conexao.php';
 require '../includes/header.php';
+include_once '../includes/conexao.php';
+
 
 //ta bugando o dropdown e não consigo apertar e finalizar
 
@@ -16,7 +16,9 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
 ?>
 
 <h2 class='text-center'>Seu Carrinho</h2>
+
 <form action="finaliza.php" method="post">
+
 <table class="table">
   <thead>
     <tr>
@@ -40,7 +42,20 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
               <td scope="row"><img src="<?php echo $foto ?>" class="produtos"></td>
               <td> <?php echo $nome ?> </td>
               <td><?php echo $valor ?></td>             
-              <td><?php echo $quantcompra ?></td> 
+              <td>
+              <div class="quantity">
+                <!-- Fazer a página d edição -->
+                <!-- https://pt.stackoverflow.com/questions/471686/atualiza%C3%A7%C3%A3o-de-quantidade-com-update-carrinho-de-compras -->
+              <!--<a href="alterarquantidade.php?a=<?//=$id?>&o=plus" class="qty-plus">-->
+              <i class="fa-solid fa-minus"></i>
+              <!-- </a> -->
+              <input type="text" readonly="" name="quantidade_produto" value="<?php echo $quantcompra?>" style=width:45px;>
+              <!-- <a href="alterarquantidade.php?a=<?//=$id?>&o=minus" class="qty-plus"> -->
+              <i class="fa-solid fa-plus"></i>
+              <!-- </a> -->
+              </div>
+              
+            </td> 
               <td><?php echo $total = $quantcompra * $valor; 
               $totalcompra += $total              
               ?></td>                          
@@ -66,9 +81,12 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
       
         </tbody>
        </table>
-  <?php $_SESSION['totalcompra'] = $totalcompra ?>
+  
+<?php 
+$_SESSION['totalcompra'] = $totalcompra 
+?>
 
-       <input type="submity" class="btn btn-success btn-lg btn-block" name="finalizar" value="Finalizar Compra">
+       <input type="submit" class="btn btn-success btn-lg btn-block" name="finalizar" value="Finalizar Compra">
        
        </form>
 
@@ -82,4 +100,12 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
   <div class="row justify-content-end">
 <a href="/"><input type="submit" class="btn btn-secondary" value="Voltar para Página Inicial"></a>
 </div>
-</div>
+    </div>
+
+
+
+
+
+<?php
+require '../includes/footer.php'
+?>

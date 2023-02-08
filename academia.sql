@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Fev-2023 às 21:05
+-- Tempo de geração: 08-Fev-2023 às 20:55
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -218,8 +218,20 @@ CREATE TABLE `item` (
   `iditem` int(11) NOT NULL,
   `idvenda` int(11) NOT NULL,
   `codigoproduto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
+  `quantidade` int(11) NOT NULL,
+  `valor` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `item`
+--
+
+INSERT INTO `item` (`iditem`, `idvenda`, `codigoproduto`, `quantidade`, `valor`) VALUES
+(1, 12, 10, 1, 35),
+(2, 12, 22, 1, 150),
+(3, 13, 15, 1, 30),
+(4, 14, 15, 1, 30),
+(5, 15, 6, 1, 50);
 
 -- --------------------------------------------------------
 
@@ -247,7 +259,7 @@ INSERT INTO `produto` (`codigoproduto`, `nome`, `foto`, `cor`, `valor`, `tamanho
 (2, 'Top Grey and Green', '../fotosprodutos/63da9b076b32b.webp', 'Cinza e verde', 20, 'M', 25, 1),
 (3, 'Top Branco', '../fotosprodutos/63da9b6280611.webp', 'Branco', 20, 'M', 25, 1),
 (5, 'Combo Suplementos', '../fotosprodutos/63da9df578097.webp', '--', 300, '1k', 10, 3),
-(6, 'Whey Protein', '../fotosprodutos/63da9e1d8950f.webp', '--', 50, '50', 15, 3),
+(6, 'Whey Protein', '../fotosprodutos/63da9e1d8950f.webp', '--', 50, '50', 14, 3),
 (7, 'Plastic Jar Mockup', '../fotosprodutos/63dab4bf196b7.webp', '--', 150, 'M', 50, 3),
 (8, 'Trio de Suplementos', '../fotosprodutos/63da9ec76a5a6.webp', '--', 150, 'M', 5, 3),
 (9, 'Garrafa Inox', '../fotosprodutos/63da9fe38c026.webp', 'Branca', 40, 'P', 20, 4),
@@ -256,7 +268,7 @@ INSERT INTO `produto` (`codigoproduto`, `nome`, `foto`, `cor`, `valor`, `tamanho
 (12, 'Garrafa Clean', '../fotosprodutos/63daa063e6b50.webp', 'Transparente', 40, 'G', 15, 4),
 (13, 'Top Rosa', '../fotosprodutos/63daa12a8d216.avif', 'Rosa', 40, 'G', 5, 1),
 (14, 'Luva antiatrito', '../fotosprodutos/63e14f971ec57.jpg', 'Preto e Roxo', 20, 'P', 5, 4),
-(15, 'Bolsa', '../fotosprodutos/63e150114a8cb.avif', 'Laranja', 30, 'M', 5, 4),
+(15, 'Bolsa', '../fotosprodutos/63e150114a8cb.avif', 'Laranja', 30, 'M', 4, 4),
 (16, 'Tênis para correr', '../fotosprodutos/63e1508adbd41.avif', 'Preto', 299, '38', 2, 4),
 (17, 'Fone sem fio', '../fotosprodutos/63e1510115392.avif', 'Cinza', 30, 'ún', 50, 4),
 (18, 'Fone Bluetooth', '../fotosprodutos/63e15137be75d.avif', 'Preto', 70, 'ún', 50, 4),
@@ -297,9 +309,28 @@ INSERT INTO `professor` (`idprofessor`, `disponibilidade`, `CPFfuncionario`) VAL
 CREATE TABLE `venda` (
   `idvenda` int(11) NOT NULL,
   `matricula` int(11) NOT NULL,
-  `valorvenda` double NOT NULL,
+  `valor` double NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `venda`
+--
+
+INSERT INTO `venda` (`idvenda`, `matricula`, `valor`, `data`) VALUES
+(3, 1, 35, '2023-02-08'),
+(4, 1, 35, '2023-02-08'),
+(5, 1, 35, '2023-02-08'),
+(6, 1, 35, '2023-02-08'),
+(7, 1, 35, '2023-02-08'),
+(8, 1, 185, '2023-02-08'),
+(9, 1, 185, '2023-02-08'),
+(10, 1, 185, '2023-02-08'),
+(11, 1, 185, '2023-02-08'),
+(12, 1, 185, '2023-02-08'),
+(13, 1, 30, '2023-02-08'),
+(14, 1, 30, '2023-02-08'),
+(15, 1, 50, '2023-02-08');
 
 --
 -- Índices para tabelas despejadas
@@ -425,7 +456,7 @@ ALTER TABLE `habilitaprofessor`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `iditem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
@@ -443,7 +474,7 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT de tabela `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `idvenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idvenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para despejos de tabelas

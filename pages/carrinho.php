@@ -21,7 +21,7 @@ $resultado->execute();
 if(($resultado) AND ($resultado->rowCount()!= 0)){
     $linha=$resultado->fetch(PDO::FETCH_ASSOC);
     extract($linha);
-    var_dump($linha);
+    //var_dump($linha);
 
     if($quantidade<$quantcompra){
         //o ideal aqui é voltar pro carrinho com uma notificação e a opção de excluir do carrinho
