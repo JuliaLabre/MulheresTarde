@@ -36,9 +36,7 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
     while($resposta = $resultado->fetch(PDO::FETCH_ASSOC)){
         extract($resposta);      
 ?>
-            <tr>
-              <input type="hidden" name="codigo" value="<?php echo $codigoproduto ?>">
-
+            <tr>              
               <td scope="row"><img src="<?php echo $foto ?>" class="produtos"></td>
               <td> <?php echo $nome ?> </td>
               <td><?php echo $valor ?></td>             
@@ -60,8 +58,7 @@ if(($resultado) AND ($resultado->rowCount()!= 0)){
               $totalcompra += $total              
               ?></td>                          
               <td>
-              <?php echo "<a href=''>" ?>
-              <input type="submit" class="btn btn-danger" name="excluir" value="Excluir">
+              <a href="finaliza.php"><button type="submit" class="btn btn-danger" name="excluir" value="<?php echo $codigoproduto ?>">Excluir</button></a>
               </td>
             </tr>
       

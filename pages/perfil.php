@@ -34,7 +34,7 @@ if(!isset($_SESSION['nome'])){
 }
 ?>
 
-<a href=sair.php><button type="submit">Sair</button></a>
+<a href=sair.php><button type="submit" class="btn">Sair</button></a>
 <!-- Footer -->
 <?php
 require '../includes/footer.php'

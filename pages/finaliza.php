@@ -4,12 +4,10 @@ ob_start();
 
 include_once '../includes/conexao.php';
 
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-$codigoproduto = $dados["codigo"];
 
-if(!empty($dados["excluir"])){
-
-    $sqlexcluir = "DELETE FROM carrinho WHERE codigoproduto =$codigoproduto";
+if($_POST["excluir"]){
+    $codigoproduto = $_POST["excluir"];
+    $sqlexcluir = "DELETE FROM carrinho WHERE codigoproduto = $codigoproduto";
     $resulexcluir = $conn -> prepare($sqlexcluir);
     $resulexcluir->execute();
     $_SESSION["quant"]-=1;
